@@ -1,16 +1,10 @@
 import './App.css'
+import Header from './components/Header'
 
 function App() {
   return(
     <main className="store">
-      <header className="header">
-        <a className="brand" href="#">The Hidden Chapter</a>
-        <nav className="navigation" aria-label="Navegación principal">
-          <a href="#inicio">Inicio</a>
-          <a href="#catalogo">Catálogo</a>
-          <a href="#carrito">Carrito</a>
-        </nav>
-      </header>
+      <Header />
 
       <section className="hero" id="inicio">
         <p className="eyebrow">UNA LIBRERÍA PARA SOÑAR</p>
