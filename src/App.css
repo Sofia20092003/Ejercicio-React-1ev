@@ -237,3 +237,87 @@
     animation-iteration-count: 1 !important;
   }
 }
+
+.featured-books{
+  width: 100%;
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 3rem 6% 6rem;
+}
+
+.featured-books h2{
+  margin: 0 0 2.5rem;
+  color: var(--color-ivory);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  text-align: center;
+}
+
+
+.book-card{
+  width: 100%;
+  max-width: 18rem;
+  overflow: hidden;
+  border: 0.0625rem solid rgb(185 154 104 / 20%);
+  border-radius: 0.5rem;
+  background-color: var(--color-plum);
+  transition: 
+    transform 0.25s ease,
+    border-color 0.25 ease;
+}
+
+.book-card:hover{
+  transform: translateY(-0.25rem);
+  border-color: var(--color-gold);
+}
+
+.book-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  background-color: var(--color-ink);
+  color: var(--color-ivory);
+}
+
+.book-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.5rem;
+}
+
+.book-card-info p,
+.book-card-info h3 {
+  margin: 0;
+}
+
+.book-card-info p:first-child{
+  color: var(--color-gold);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.book-card-info h3 {
+  color: var(--color-ivory);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.book-card-info p:nth-of-type(2) {
+  color: rgb(234 224 210 / 70%);
+  font-size: 0.875rem;
+}
+
+
+.book-card-info p:last-child {
+  margin-top: 0.5rem;
+  color: var(--color-gold);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
