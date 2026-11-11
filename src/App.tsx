@@ -1,24 +1,13 @@
 import './App.css'
 import Header from './components/Header'
+import Hero from './components/Hero'
 
 function App() {
   return(
     <main className="store">
       <Header />
 
-      <section className="hero" id="inicio">
-        <p className="eyebrow">UNA LIBRERÍA PARA SOÑAR</p>
-        <h1>
-          Every story hides
-          <br/>
-          <span>another world.</span>
-        </h1>
-        <p className="hero-description">
-          Descubre historias que te transportan a otros mundos, romances imposibles y 
-          secretos que esperan ser revelados.
-        </p>
-        <a className="primary-button" href="#catalogo">Explorar libros</a>
-      </section>
+      <Hero />
 
       <section className="intro" id="catalogo">
         <p className="eyebrow">TU PRÓXIMO MUNDO TE ESPERA</p>
