@@ -9,5 +9,104 @@
         "imagen": "/images/alas-de-sangre.jpg",
         "idioma": "Español",
         "stock": 10
+    },
+    {
+        "id": 2,
+        "titulo": "Una corte de rosas y espinas",
+        "autor": "Sarah J. Maas",
+        "descripcion": "Tras matar a una criatura en el bosque, Feyre es llevada a un mundo mágico donde descubrirá secretos, peligros y un amor inesperado.",
+        "categoria": "romantasy",
+        "precio": 20.95,
+        "imagen": "/images/una-corte-de-rosas-y-espinas.jpg",
+        "idioma": "Español",
+        "stock": 8
+    },
+    {
+        "id": 3,
+        "titulo": "El príncipe cruel",
+        "autor": "Holly Black",
+        "descripcion": "Jude, una joven humana criada en la corte de las hadas, está dispuesta a hacer lo necesario para ganarse un lugar en un mundo lleno de intrigas y traiciones.",
+        "categoria": "fantasia",
+        "precio": 19.95,
+        "imagen": "/images/el-principe-cruel.jpg",
+        "idioma": "Español",
+        "stock": 12
+    },
+    {
+        "id": 4,
+        "titulo": "De sangre y cenizas",
+        "autor": "Jennifer L. Armentrout",
+        "descripcion": "Poppy ha vivido bajo estrictas normas mientras espera cumplir su destino, pero la llegada de un guardia cambiará todo lo que creía conocer.",
+        "categoria": "romantasy",
+        "precio": 21.90,
+        "imagen": "/images/de-sangre-y-cenizas.jpg",
+        "idioma": "Español",
+        "stock": 6
+    },
+    {
+        "id": 5,
+        "titulo": "Romper el círculo",
+        "autor": "Colleen Hoover",
+        "descripcion": "Lily intenta construir una nueva vida, pero una relación inesperada la enfrentará a decisiones difíciles sobre el amor y su futuro.",
+        "categoria": "romance",
+        "precio": 19.90,
+        "imagen": "/images/romper-el-circulo.jpg",
+        "idioma": "Español",
+        "stock": 10
+    },
+    {
+        "id": 6,
+        "titulo": "La hipótesis del amor",
+        "autor": "Ali Hazelwood",
+        "descripcion": "Olive, una doctoranda, comienza una relación fingida con un joven profesor que acabará poniendo a prueba sus teorías sobre el amor.",
+        "categoria": "romance",
+        "precio": 18.95,
+        "imagen": "/images/la-hipotesis-del-amor.jpg",
+        "idioma": "Español",
+        "stock": 8
+    },
+    {
+        "id": 7,
+        "titulo": "Antes de diciembre",
+        "autor": "Joana Marcús",
+        "descripcion": "Jenna comienza una nueva etapa universitaria en la que descubrirá que las relaciones y las decisiones personales pueden cambiarlo todo.",
+        "categoria": "romance",
+        "precio": 17.95,
+        "imagen": "/images/antes-de-diciembre.jpg",
+        "idioma": "Español",
+        "stock": 12
+    },
+    {
+    "id": 8,
+    "titulo": "Heartstopper. Volumen 1",
+    "autor": "Alice Oseman",
+    "descripcion": "Charlie y Nick se conocen en el instituto y construyen una amistad que poco a poco se convierte en algo más.",
+    "categoria": "juvenil",
+    "precio": 15.95,
+    "imagen": "/images/heartstopper-volumen-1.jpg",
+    "idioma": "Español",
+    "stock": 10
+    },
+    {
+    "id": 9,
+    "titulo": "Las ventajas de ser un marginado",
+    "autor": "Stephen Chbosky",
+    "descripcion": "Charlie comienza el instituto mientras descubre la amistad, el primer amor y los desafíos de crecer.",
+    "categoria": "juvenil",
+    "precio": 12.95,
+    "imagen": "/images/las-ventajas-de-ser-un-marginado.jpg",
+    "idioma": "Español",
+    "stock": 8
+    },
+    {
+    "id": 10,
+    "titulo": "Boulevard",
+    "autor": "Flor M. Salvador",
+    "descripcion": "Hasley y Luke desarrollan una relación intensa que cambiará su manera de entender el amor y la vida.",
+    "categoria": "juvenil",
+    "precio": 17.95,
+    "imagen": "/images/boulevard.jpg",
+    "idioma": "Español",
+    "stock": 12
     }
 ]
