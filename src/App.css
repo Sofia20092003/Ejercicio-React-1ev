@@ -13,4 +13,227 @@
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1.5rem 6%;
+  border-bottom: 1px solid rgb(234 224 210 / 12%);
+}
+
+.brand{
+  color: var(--color-ivory);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0,03em;
+}
+
+.navigation{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.navigation a{
+  color: var(--color-ivory);
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.navigation a:hover{
+  color: var(--color-gold);
+}
+
+.hero{
+  min-height: min(42rem, 85vh);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 6%;
+  text-align: center;
+  background: 
+    radial-gradient(
+      ellipse at 50% 35%
+      rgb(113 52 72 / 30%)
+      transparent 65%
+    ),
+    var(--color-ink)
+  ;
+}
+
+.eyebrow{
+  margin: 0 0 1.5rem;
+  color: var(--color-gold);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.22rem;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.hero h1{
+  max-width: 15ch;
+  margin: 0;
+  color: var(--color-ivory);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: clamp(2.8rem, 7vw, 6rem);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.hero h1 span{
+  color: var(--color-gold);
+  font-style: italic;
+}
+
+.hero-description{
+  max-width: 38rem;
+  margin: 2rem 0;
+  color: rgb(234 224 210 / 78%);
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  line-height: 1.9;
+}
+
+.primary-button{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.25rem;
+  padding: 0.9rem 1.75rem;
+  border: 1px solid var(--color-gold);
+  background-color: var(--color-gold);
+  color: var(--color-ink);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: center;
+  transition: 
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.primary-button:hover{
+  background-color: transparent;
+  color: var(--color-gold);
+  transform: translateY(-0.125rem);
+}
+
+.intro{
+  max-width: 58rem;
+  margin: 0 auto;
+  padding: 6rem 6%;
+  text-align: center;
+}
+
+.intro h2{
+  margin: 0;
+  color: var(--color-ivory);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.intro > p:last-child{
+  max-width: 38rem;
+  margin: 1.5rem auto 0;
+  color: rgb(234 224 210 / 72%);
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+.footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 2.5rem 6%;
+  border-top: 1px solid rgb(234 224 210 / 12%);
+  text-align: center;
+}
+
+.footer p{
+  margin: 0;
+  color: rgb(234 224 210 / 65%);
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+.footer p:first-child{
+  color: var(--color-gold);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.25rem;
+}
+
+@media (max-width: 48rem){
+  .header{
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 1.5rem 5%;
+  }
+
+  .navigation{
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .hero{
+    min-height: auto;
+    padding: 6rem 5%;
+  }
+
+  .intro{
+    padding: 4.5rem 5%;
+  }
+}
+
+@media (max-width: 30rem){
+  .brand{
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  .navigation{
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .navigation a{
+    font-size: 0.875rem;
+  }
+
+  .hero{
+    padding: 4.5rem 1.25rem;
+  }
+
+  .hero h1{
+    font-size: clamp(2.4rem, 10vw, 3rem);
+  }
+
+  .hero-description{
+    margin: 1.5rem 0;
+    line-height: 1.7;
+  }
+
+  .intro{
+    padding: 3.5rem 1.25rem;
+  }
+
+  .footer{
+    padding: 2rem 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }
