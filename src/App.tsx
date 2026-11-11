@@ -1,6 +1,7 @@
 import './App.css'
 import Header from './components/Header'
 import Hero from './components/Hero'
+import Footer from './components/Footer'
 
 function App() {
   return(
@@ -18,10 +19,7 @@ function App() {
         </p>
       </section>
 
-      <footer className="footer" id="carrito">
-        <p>The Hidden Chapter</p>
-        <p>Every story hides another world.</p>
-      </footer>
+      <Footer />
     </main>
 
   )
