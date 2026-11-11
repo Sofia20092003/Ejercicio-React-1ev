@@ -1,0 +1,13 @@
+[
+    {
+        "id": 1,
+        "titulo": "Alas de Sangre",
+        "autor": "Rebecca Yarros",
+        "descripcion": "Violet Sorrengail ingresa en el Colegio de Guerra de Basgiath, donde deberá sobrevivir a una peligrosa formación para convertirse en jinete de dragones.",
+        "categoria": "Romantasy",
+        "precio": 22.90,
+        "imagen": "/images/alas-de-sangre.jpg",
+        "idioma": "Español",
+        "stock": 10
+    }
+]
