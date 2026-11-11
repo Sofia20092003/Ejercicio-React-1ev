@@ -17,7 +17,12 @@ function App() {
 
       <section className='featured-books'>
         <h2>Nuestros Libros</h2>
-        <BookCard book={books[0]} />
+
+        <div className='books-grid'>
+          {books.map((book) =>(
+            <BookCard key={book.id} book={book} />
+          ))}
+        </div>
       </section>
 
       <Footer />
