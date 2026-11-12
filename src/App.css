@@ -235,6 +235,14 @@
   outline-offset: 0.125rem;
 }
 
+.no-results{
+  padding: 3rem 1.5rem;
+  color: var(--color-ivory);
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
 @media (max-width: 48rem){
   .header{
     flex-direction: column;

@@ -11,7 +11,17 @@ function App() {
   const [categoria, setCategoria] = useState('Todos');
   const [busqueda, setBusqueda] = useState('');
   const librosFiltrados = books.filter((book) => {
-    return categoria === 'todos' || book.categoria === categoria
+    const coincideCategoria = 
+      categoria === 'todos' || book.categoria === categoria
+
+    const textoBusqueda = busqueda.trim().toLowerCase()
+
+    const coincideBusqueda =
+      book.titulo.toLowerCase().includes(textoBusqueda) || 
+      book.descripcion.toLowerCase().includes(textoBusqueda)
+
+
+    return coincideCategoria && coincideBusqueda
   });
   return(
     <main className="store">
@@ -60,11 +70,18 @@ function App() {
           </button>
         </div>
 
-        <div className='books-grid'>
-          {librosFiltrados.map((book) => (
-            <BookCard key={book.id} book={book}/>
-          ))}
-        </div>
+        {librosFiltrados.length > 0 ? (
+          <div className='books-grid'>
+            {librosFiltrados.map((book) => (
+              <BookCard key={book.id} book={book}/>
+            ))}
+          </div>
+        ): (
+          <p className='no-results'>
+            No hemos encontrado libros que coincidan con tu búsqueda.
+          </p>
+        )
+        }
       </section>
 
       <Footer />
