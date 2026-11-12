@@ -29,6 +29,19 @@ body{
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+
+  background-color: var(--color-ink);
+  background-image:
+    linear-gradient(
+      rgb(21 19 22 / 30%),
+      rgb(21 19 22 / 55%)
+    ),
+    url('/images/hero-background.png');
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 body,

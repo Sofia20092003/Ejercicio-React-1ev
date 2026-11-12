@@ -10,21 +10,30 @@
 }
 
 .header{
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
+  min-height: 8rem;
   padding: 1.5rem 6%;
-  border-bottom: 1px solid rgb(234 224 210 / 12%);
 }
 
 .brand{
-  color: var(--color-ivory);
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: 0,03em;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.brand-logo{
+  display: block;
+  width: clamp(16rem, 26vw, 23rem);
+  height: auto;
+  object-fit: contain;
+  transition: opacity 0.2s ease;
+}
+
+.brand:hover .brand-logo{
+  opacity: 0.85;
 }
 
 .navigation{
@@ -51,16 +60,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 5rem 6%;
+  padding: 7rem 6%;
   text-align: center;
-  background: 
-    radial-gradient(
-      ellipse at 50% 35%
-      rgb(113 52 72 / 30%)
-      transparent 65%
-    ),
-    var(--color-ink)
-  ;
+  position: relative;
+  background: transparent;
 }
 
 .eyebrow{
@@ -243,6 +246,12 @@
   text-align: center;
 }
 
+@media (max-width: 30rem){
+  .brand-logo{
+    width: min(17rem, 80vw);
+  }
+}
+
 @media (max-width: 48rem){
   .header{
     flex-direction: column;
@@ -281,7 +290,10 @@
   }
 
   .hero{
-    padding: 4.5rem 1.25rem;
+    min-height: 36rem;
+    padding: 5rem 1.25rem;
+
+    background-position: 55% center;
   }
 
   .hero h1{
@@ -409,4 +421,18 @@
   color: var(--color-gold);
   font-size: 1.25rem;
   font-weight: 700;
+}
+
+
+
+
+
+#root,
+.store,
+.header,
+.hero,
+.intro,
+.featured-books,
+.footer {
+  background-color: transparent;
 }
