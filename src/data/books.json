@@ -108,5 +108,159 @@
     "imagen": "/images/boulevard.jpg",
     "idioma": "Español",
     "stock": 12
+    },
+    {
+    "id": 11,
+    "titulo": "La novena casa",
+    "autor": "Leigh Bardugo",
+    "descripcion": "Alex Stern llega a la Universidad de Yale con una misión secreta: vigilar las sociedades ocultas que practican una magia peligrosa.",
+    "categoria": "fantasia",
+    "precio": 21.90,
+    "imagen": "/images/la-novena-casa.jpg",
+    "idioma": "Español",
+    "stock": 9
+    },
+    {
+    "id": 12,
+    "titulo": "Seis de cuervos",
+    "autor": "Leigh Bardugo",
+    "descripcion": "Kaz Brekker reúne a un grupo de criminales con habilidades extraordinarias para llevar a cabo un golpe casi imposible.",
+    "categoria": "fantasia",
+    "precio": 20.95,
+    "imagen": "/images/seis-de-cuervos.jpg",
+    "idioma": "Español",
+    "stock": 11
+    },
+    {
+    "id": 13,
+    "titulo": "El imperio final",
+    "autor": "Brandon Sanderson",
+    "descripcion": "En un mundo gobernado por un tirano inmortal, una joven descubre sus poderes y se une a un grupo que planea desafiar al imperio.",
+    "categoria": "fantasia",
+    "precio": 24.90,
+    "imagen": "/images/el-imperio-final.jpg",
+    "idioma": "Español",
+    "stock": 7
+    },
+    {
+    "id": 14,
+    "titulo": "Alas de hierro",
+    "autor": "Rebecca Yarros",
+    "descripcion": "Violet Sorrengail afronta su segundo año en Basgiath, donde nuevas amenazas, secretos y decisiones pondrán a prueba sus lealtades.",
+    "categoria": "romantasy",
+    "precio": 23.90,
+    "imagen": "/images/alas-de-hierro.jpg",
+    "idioma": "Español",
+    "stock": 9
+    },
+    {
+    "id": 15,
+    "titulo": "Una corte de niebla y furia",
+    "autor": "Sarah J. Maas",
+    "descripcion": "Tras los acontecimientos de Bajo la Montaña, Feyre debe afrontar las consecuencias de su pasado y descubrir un nuevo destino en Prythian.",
+    "categoria": "romantasy",
+    "precio": 21.95,
+    "imagen": "/images/una-corte-de-niebla-y-furia.jpg",
+    "idioma": "Español",
+    "stock": 8
+    },
+    {
+    "id": 16,
+    "titulo": "La serpiente y las alas de la noche",
+    "autor": "Carissa Broadbent",
+    "descripcion": "Oraya, una humana criada entre vampiros, participa en un torneo mortal donde deberá decidir en quién confiar para sobrevivir.",
+    "categoria": "romantasy",
+    "precio": 22.95,
+    "imagen": "/images/la-serpiente-y-las-alas-de-la-noche.jpg",
+    "idioma": "Español",
+    "stock": 10
+    },
+    {
+    "id": 17,
+    "titulo": "El nombre del viento",
+    "autor": "Patrick Rothfuss",
+    "descripcion": "Kvothe, un legendario músico y arcanista, relata la historia de su juventud, sus años de aprendizaje y los acontecimientos que lo convirtieron en una leyenda.",
+    "categoria": "fantasia",
+    "precio": 22.90,
+    "imagen": "/images/el-nombre-del-viento.jpg",
+    "idioma": "Español",
+    "stock": 8
+    },
+    {
+    "id": 18,
+    "titulo": "El priorato del naranjo",
+    "autor": "Samantha Shannon",
+    "descripcion": "En un mundo dividido por antiguas creencias, reinas, guerreras y jinetes de dragones deberán enfrentarse al despertar de una amenaza ancestral.",
+    "categoria": "fantasia",
+    "precio": 24.95,
+    "imagen": "/images/el-priorato-del-naranjo.jpg",
+    "idioma": "Español",
+    "stock": 6
+    },
+    {
+    "id": 19,
+    "titulo": "La teoría del amor",
+    "autor": "Ali Hazelwood",
+    "descripcion": "Elsie Hannaway lleva una doble vida como profesora de física y novia falsa por encargo, hasta que conoce a un físico experimental que pone su mundo patas arriba.",
+    "categoria": "romance",
+    "precio": 19.95,
+    "imagen": "/images/la-teoria-del-amor.jpg",
+    "idioma": "Español",
+    "stock": 9
+    },
+    {
+    "id": 20,
+    "titulo": "Gente que conocemos en vacaciones",
+    "autor": "Emily Henry",
+    "descripcion": "Poppy y Alex son dos amigos muy diferentes que comparten unas vacaciones cada verano, hasta que una experiencia cambia su relación y los obliga a enfrentarse a sus sentimientos.",
+    "categoria": "romance",
+    "precio": 18.95,
+    "imagen": "/images/gente-que-conocemos-en-vacaciones.jpg",
+    "idioma": "Español",
+    "stock": 10
+    },
+    {
+    "id": 21,
+    "titulo": "Todos los lugares que mantuvimos en secreto",
+    "autor": "Inma Rubiales",
+    "descripcion": "Mae regresa al lugar donde creció y se reencuentra con personas de su pasado mientras intenta descubrir qué quiere realmente para su futuro.",
+    "categoria": "romance",
+    "precio": 18.90,
+    "imagen": "/images/todos-los-lugares-que-mantuvimos-en-secreto.jpg",
+    "idioma": "Español",
+    "stock": 8
+    },
+    {
+    "id": 22,
+    "titulo": "Invisible",
+    "autor": "Eloy Moreno",
+    "descripcion": "Un niño desea hacerse invisible para escapar de una realidad dolorosa. Una historia que explora el acoso escolar, la empatía y la importancia de prestar atención a quienes nos rodean.",
+    "categoria": "juvenil",
+    "precio": 16.95,
+    "imagen": "/images/invisible.jpg",
+    "idioma": "Español",
+    "stock": 10
+    },
+    {
+    "id": 23,
+    "titulo": "El verano en que me enamoré",
+    "autor": "Jenny Han",
+    "descripcion": "Belly pasa cada verano en la casa de la playa junto a su familia y sus amigos, pero esta vez descubrirá que crecer también significa afrontar sentimientos inesperados.",
+    "categoria": "juvenil",
+    "precio": 17.95,
+    "imagen": "/images/el-verano-en-que-me-enamore.jpg",
+    "idioma": "Español",
+    "stock": 8
+    },
+    {
+    "id": 24,
+    "titulo": "A través de mi ventana",
+    "autor": "Ariana Godoy",
+    "descripcion": "Raquel lleva años enamorada de su vecino Ares, pero cuando sus vidas comienzan a cruzarse descubrirá que la realidad puede ser mucho más complicada que sus fantasías.",
+    "categoria": "juvenil",
+    "precio": 18.95,
+    "imagen": "/images/a-traves-de-mi-ventana.jpg",
+    "idioma": "Español",
+    "stock": 12
     }
 ]
