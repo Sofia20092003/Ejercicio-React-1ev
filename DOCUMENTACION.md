@@ -540,6 +540,14 @@ No se ejecutaron nuevamente los comandos `npm run lint` ni `npm run build` duran
 
 ---
 
+### Alineación de tarjetas y botones — 14 de noviembre de 2026
+
+- Se ajustó la distribución vertical de las tarjetas para alinear el precio y el botón en cada fila, reservando espacio para los mensajes de estado.
+- «Explorar libros» y «Ver catálogo completo» comparten el mismo redondeo y estilo principal.
+- Se actualizaron ambos documentos y se revisaron los cambios de estilo; queda pendiente la comprobación visual en el navegador.
+
+---
+
 ## 8. Mantenimiento de la documentación
 
 Después de cada nueva implementación se registrará:

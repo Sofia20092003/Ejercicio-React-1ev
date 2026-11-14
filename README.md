@@ -12,7 +12,7 @@ La librería está especializada en cuatro géneros literarios:
 
 Su identidad visual combina la estética *Dark Academia* con elementos de fantasía: colores oscuros, detalles dorados, ilustraciones y una ambientación inspirada en mundos literarios.
 
-> **Estado del proyecto:** En desarrollo. Inicio y Catálogo tienen rutas independientes. Inicio muestra cuatro libros destacados y un botón centrado con esquinas redondeadas; los enlaces abren el catálogo en la misma pestaña, desde arriba. Catálogo ofrece búsqueda y filtros. Favoritos y una versión básica del Carrito están disponibles; la página de detalle y el proceso de compra siguen pendientes.
+> **Estado del proyecto:** En desarrollo. Inicio y Catálogo tienen rutas independientes. Inicio muestra cuatro libros destacados y dos botones con el mismo estilo y esquinas redondeadas; los enlaces abren el catálogo en la misma pestaña, desde arriba. Catálogo ofrece búsqueda y filtros. Favoritos y una versión básica del Carrito están disponibles; la página de detalle y el proceso de compra siguen pendientes.
 
 ---
 

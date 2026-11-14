@@ -107,6 +107,7 @@
   min-height: 3.25rem;
   padding: 0.9rem 1.75rem;
   border: 1px solid var(--color-gold);
+  border-radius: 0.5rem;
   background-color: var(--color-gold);
   color: var(--color-ink);
   font-size: 0.9rem;
@@ -638,7 +639,6 @@
   display: flex;
   width: fit-content;
   margin: 2.5rem auto 0;
-  border-radius: 0.5rem;
 }
 
 .books-grid{
@@ -657,6 +657,8 @@
 
 
 .book-card{
+  display: flex;
+  flex-direction: column;
   width: 100%;
   max-width: 18rem;
   overflow: hidden;
@@ -686,6 +688,7 @@
 
 .book-card-info {
   display: flex;
+  flex: 1;
   flex-direction: column;
   gap: 0.75rem;
   padding: 1.5rem;
@@ -719,7 +722,8 @@
 
 
 .book-card-info .book-price {
-  margin-top: 0.5rem;
+  margin-top: auto;
+  padding-top: 0.5rem;
   color: var(--color-gold);
   font-size: 1.25rem;
   font-weight: 700;
@@ -743,7 +747,7 @@
 html { scroll-behavior: smooth; }
 .page-content { animation: page-enter 0.45s ease-out both; }
 @keyframes page-enter { from { opacity: 0; transform: translateY(0.5rem); } to { opacity: 1; transform: translateY(0); } }
-.book-cover { position: relative; }
+.book-cover { position: relative; flex-shrink: 0; }
 .favorite-button { position: absolute; top: 0.8rem; right: 0.8rem; display: grid; place-items: center; width: 2.7rem; height: 2.7rem; border: 1px solid rgb(185 154 104 / 55%); border-radius: 50%; background: rgb(21 19 22 / 85%); color: var(--color-ivory); cursor: pointer; transition: color 0.25s ease, transform 0.25s ease; }
 .favorite-button:hover { color: var(--color-gold); transform: scale(1.08); }
 .favorite-button svg { width: 1.35rem; height: 1.35rem; fill: transparent; stroke: currentColor; stroke-width: 1.7; }
@@ -751,7 +755,7 @@ html { scroll-behavior: smooth; }
 .favorite-button.is-favorite svg { fill: currentColor; }
 .add-cart-button, .cart-item button { padding: 0.8rem 1rem; border: 1px solid var(--color-gold); border-radius: 0.5rem; background: transparent; color: var(--color-ivory); cursor: pointer; transition: background-color 0.25s ease, color 0.25s ease; }
 .add-cart-button:hover, .cart-item button:hover { background: var(--color-gold); color: var(--color-ink); }
-.book-feedback { min-height: 1.1rem; font-size: 0.75rem; color: var(--color-ivory); }
+.book-feedback { min-height: 2.5em; font-size: 0.75rem; color: var(--color-ivory); }
 .empty-library { text-align: center; color: var(--color-ivory); }
 .empty-library a { color: var(--color-gold); text-decoration: underline; }
 .cart-list { max-width: 50rem; margin: 0 auto; color: var(--color-ivory); }
