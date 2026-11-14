@@ -777,3 +777,29 @@ html { scroll-behavior: smooth; }
 .cart-item .quantity-control button { display: grid; place-items: center; width: 2.2rem; height: 2.2rem; padding: 0; font-size: 1.1rem; }
 .cart-item button:disabled { opacity: 0.45; cursor: not-allowed; }
 .cart-item button:disabled:hover { background: transparent; color: var(--color-ivory); }
+
+/* Catálogo, stock y detalle */
+.search-actions { display: flex; gap: 0.75rem; }
+.search-actions input { min-width: 0; }
+.search-actions button { cursor: pointer; }
+.catalog-count { color: var(--color-ivory); text-align: center; margin: 0 0 1.5rem; }
+.pagination { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.6rem; margin-top: 2.5rem; }
+.pagination button { min-width: 2.6rem; min-height: 2.6rem; border: 1px solid var(--color-gold); border-radius: 0.4rem; background: transparent; color: var(--color-ivory); cursor: pointer; }
+.pagination button[aria-current="page"], .pagination button:hover { background: var(--color-gold); color: var(--color-ink); }
+.book-card-info .book-stock { color: rgb(234 224 210 / 75%); font-size: 0.8rem; }
+.detail-link, .detail-back { color: var(--color-gold); text-decoration: underline; }
+.add-cart-button:disabled, .detail-info button:disabled { opacity: 0.55; cursor: not-allowed; }
+.book-detail { max-width: 72rem; margin: 0 auto; padding: 3rem 6% 6rem; color: var(--color-ivory); }
+.detail-layout { display: grid; grid-template-columns: minmax(12rem, 22rem) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4rem); margin-top: 2rem; align-items: start; }
+.detail-cover { width: 100%; border-radius: 0.5rem; }
+.detail-info h1 { font: 400 clamp(2rem, 5vw, 3.5rem) Georgia, serif; margin: 0.5rem 0; }
+.detail-info p { line-height: 1.7; }
+.detail-category, .detail-price { color: var(--color-gold); }
+.detail-price { font-size: 1.5rem; font-weight: 700; }
+.detail-info dl { display: grid; gap: 0.5rem; margin: 1.5rem 0; }
+.detail-info dl div { display: flex; gap: 0.75rem; }
+.detail-info dt { font-weight: 700; }
+.detail-info dd { margin: 0; }
+.empty-cart-button { padding: 0.8rem 1rem; border: 1px solid var(--color-gold); border-radius: 0.5rem; background: transparent; color: var(--color-ivory); cursor: pointer; }
+.empty-cart-button:hover { background: var(--color-gold); color: var(--color-ink); }
+@media (max-width: 40rem) { .detail-layout { grid-template-columns: 1fr; } .detail-cover { max-width: 18rem; } .search-actions { flex-wrap: wrap; } }

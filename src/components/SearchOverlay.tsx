@@ -1,4 +1,5 @@
 import { useState, type RefObject } from "react";
+import { Link } from "react-router";
 import {books} from '../data/books'
 
 interface SearchOverlayProps{
@@ -49,14 +50,14 @@ function SearchOverlay({onClose, inputRef}: SearchOverlayProps){
                 <div className="inline-search-results">
                 {resultados.length > 0 ? (
                     resultados.map((book) => (
-                    <div className="inline-search-result" key={book.id}>
+                    <Link className="inline-search-result" key={book.id} to={`/libro/${book.id}`} onClick={onClose}>
                         <img src={book.imagen} alt="" />
 
                         <div>
                         <p className="result-title">{book.titulo}</p>
                         <p className="result-author">{book.autor}</p>
                         </div>
-                    </div>
+                    </Link>
                     ))
                 ) : (
                     <p className="search-empty">

@@ -5,7 +5,7 @@ import BookCard from '../components/BookCard'
 import { books } from '../data/books'
 
 function HomePage() {
-  const librosDestacados = books.slice(0, 4)
+  const librosDestacados = books.slice(0, 8)
 
   return (
     <>

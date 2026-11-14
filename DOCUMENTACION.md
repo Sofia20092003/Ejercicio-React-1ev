@@ -18,7 +18,7 @@ Su diseño sigue una estética Dark Academia y fantasía, utilizando colores osc
 
 Este documento registra las fases de desarrollo, las decisiones técnicas, los archivos modificados, los problemas detectados y las tareas pendientes.
 
-**Estado a 14 de noviembre de 2026:** proyecto en desarrollo. La copia local tiene rutas para Inicio, Catálogo, Favoritos y un carrito básico. Detalle y el proceso de compra están pendientes.
+**Estado a 14 de noviembre de 2026:** proyecto en desarrollo. La copia local tiene rutas para Inicio, Catálogo, Detalle, Favoritos y Carrito. El proceso de compra y la validación final están pendientes.
 
 ---
 
@@ -73,7 +73,9 @@ Se ha organizado el código en componentes, datos, tipos y estilos.
 ### Páginas en preparación
 
 - `src/pages/CatalogoPage.tsx`: muestra los libros con `BookCard` y `.map()`, y contiene la búsqueda y los filtros. Se muestra en `/catalogo`.
-- `src/pages/HomePage.tsx`: muestra portada, introducción y cuatro libros destacados en `/`.
+- `src/pages/HomePage.tsx`: muestra portada, introducción y ocho libros destacados en `/`.
+
+`DetalleLibroPage.tsx` muestra la ficha individual, y `FavoritosPage.tsx` y `CarritoPage.tsx` muestran las selecciones guardadas.
 
 La vista activa se compone en `App.tsx`; la lógica de filtros y búsqueda reside en `CatalogoPage.tsx`.
 
@@ -400,9 +402,9 @@ El archivo `index.html` declara actualmente `lang="en"`.
 
 ### 5.5. Navegación provisional
 
-Inicio, Catálogo, Favoritos y Carrito utilizan rutas de React Router.
+Inicio, Catálogo, Detalle, Favoritos y Carrito utilizan rutas de React Router.
 
-**Pendiente:** configurar la ruta de detalle y completar las funciones del carrito.
+**Pendiente:** validar las rutas y funcionalidades en el navegador.
 
 Las incidencias pendientes se mantienen para futuras actualizaciones; las correcciones realizadas se indican en cada apartado.
 
@@ -412,25 +414,19 @@ Las incidencias pendientes se mantienen para futuras actualizaciones; las correc
 
 ### Fase 10. Organización de páginas
 
-Inicio, Catálogo, Favoritos y Carrito cuentan con rutas separadas. Crear la página de detalle y evolucionar el catálogo. El nombre actual del archivo es `CatalogoPage.tsx`.
+Inicio, Catálogo, Detalle, Favoritos y Carrito cuentan con rutas separadas.
 
 ### Fase 11. Catálogo y paginación
 
-Incorporar paginación y revisar la combinación entre categorías, búsqueda y resultados.
+El catálogo dispone de paginación, búsqueda mediante formulario y filtros de categoría; queda pendiente su validación visual y funcional.
 
 ### Fase 12. Detalle de libro
 
-Crear una página individual que muestre la información del libro seleccionado.
+La página individual muestra los datos del libro y permite añadirlo al carrito; queda pendiente su validación en el navegador.
 
 ### Fase 13. Carrito
 
-Implementar:
-
-- Añadir libros.
-- Modificar cantidades.
-- Eliminar productos con confirmación.
-- Vaciar el carrito con confirmación.
-- Calcular el importe total.
+Implementados: añadir libros, modificar cantidades, eliminar un título y vaciar con confirmación, y calcular el total. Queda pendiente la validación funcional en el navegador.
 
 ### Fase 14. Pruebas finales
 
@@ -554,6 +550,16 @@ No se ejecutaron nuevamente los comandos `npm run lint` ni `npm run build` duran
 - En `/carrito`, los botones + y − permiten ajustar la cantidad, desde una unidad hasta el stock indicado en `books.json`; eliminar retira todas las unidades del título.
 - El botón de las tarjetas también respeta el máximo y muestra un mensaje al alcanzarlo. El stock es local y no se reduce ni se reserva entre usuarios.
 - Se actualizaron `README.md` y esta bitácora. Se comprobaron ESLint y compilación en una copia de trabajo, y se verificó la lógica de aumento, límite, reducción y eliminación con datos de prueba. Queda pendiente la prueba visual y funcional en el navegador.
+
+---
+
+### Requisitos de la tienda — 14 de noviembre de 2026
+
+- Inicio muestra ocho libros destacados. El catálogo añade búsqueda por formulario y paginación de ocho resultados, combinadas con el filtro de categoría.
+- Las tarjetas muestran el stock del archivo de datos y las unidades en el carrito. Las fichas `/libro/:id` muestran todos los datos y permiten añadir al carrito; los resultados de la cabecera enlazan a ellas.
+- El carrito solicita confirmación antes de eliminar un título o vaciarlo. El stock es local: no reserva ni sincroniza inventario entre usuarios.
+- Se actualizaron ambos documentos. ESLint y compilación finalizaron correctamente; se comprobaron con renderizado de componentes los destacados, primera página del catálogo, detalle y ficha inexistente, y se probó la lógica de cantidades, eliminación y vaciado.
+- La ejecución del servidor de prueba no estuvo disponible en este entorno; quedan pendientes las pruebas visuales e interactivas en el navegador, incluidas búsqueda, paginación y confirmaciones.
 
 ---
 

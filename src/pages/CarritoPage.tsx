@@ -4,7 +4,7 @@ import { books } from '../data/books'
 import { useLibrary } from '../hooks/useLibrary'
 
 function CarritoPage() {
-  const { cart, addToCart, decreaseQuantity, removeFromCart } = useLibrary()
+  const { cart, addToCart, decreaseQuantity, removeFromCart, clearCart } = useLibrary()
   const [mensaje, setMensaje] = useState('')
   const items = books.filter(book => cart.includes(book.id))
   const total = items.reduce((sum, book) => sum + book.precio * cart.filter(id => id === book.id).length, 0)
@@ -19,7 +19,14 @@ function CarritoPage() {
   }
 
   function eliminar(id: number) {
+    const book = books.find(item => item.id === id)
+    if (!book || !window.confirm(`¿Eliminar ${book.titulo} del carrito?`)) return
     setMensaje(removeFromCart(id) ? '' : 'No se pudo guardar el carrito en este navegador.')
+  }
+
+  function vaciar() {
+    if (!window.confirm('¿Vaciar todo el carrito?')) return
+    setMensaje(clearCart() ? '' : 'No se pudo guardar el carrito en este navegador.')
   }
 
   return (
@@ -43,6 +50,7 @@ function CarritoPage() {
             </div>
           </article>
         })}
+        <button className="empty-cart-button" type="button" onClick={vaciar}>Vaciar carrito</button>
         <p className="cart-total">Total: {total.toFixed(2)} €</p>
         <p>El proceso de compra aún está pendiente.</p>
         <p role="status">{mensaje}</p>

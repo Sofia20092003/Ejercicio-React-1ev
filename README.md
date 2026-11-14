@@ -12,7 +12,7 @@ La librería está especializada en cuatro géneros literarios:
 
 Su identidad visual combina la estética *Dark Academia* con elementos de fantasía: colores oscuros, detalles dorados, ilustraciones y una ambientación inspirada en mundos literarios.
 
-> **Estado del proyecto:** En desarrollo. Inicio y Catálogo tienen rutas independientes. Inicio muestra cuatro libros destacados y dos botones con el mismo estilo y esquinas redondeadas; los enlaces abren el catálogo en la misma pestaña, desde arriba. Catálogo ofrece búsqueda y filtros. Favoritos y una versión básica del Carrito están disponibles; la página de detalle y el proceso de compra siguen pendientes.
+> **Estado del proyecto:** En desarrollo. Inicio y Catálogo tienen rutas independientes. Inicio muestra ocho libros destacados. El catálogo ofrece búsqueda, filtros y paginación; cada libro tiene una página de detalle. Favoritos y carrito están disponibles; el proceso de compra sigue pendiente.
 
 ---
 
@@ -164,8 +164,14 @@ Ejercicio-React-1ev/
 │   │   └── SearchOverlay.tsx
 │   │
 │   ├── pages/
-│   │   ├── CatalogoPage.tsx  (catálogo, búsqueda y filtros)
-│   │   └── HomePage.tsx      (inicio y libros destacados)
+│   │   ├── CatalogoPage.tsx
+│   │   ├── HomePage.tsx
+│   │   ├── DetalleLibroPage.tsx
+│   │   ├── FavoritosPage.tsx
+│   │   └── CarritoPage.tsx
+│   │
+│   ├── hooks/
+│   │   └── useLibrary.ts
 │   │
 │   ├── data/
 │   │   ├── books.json
@@ -186,7 +192,7 @@ Ejercicio-React-1ev/
 └── DOCUMENTACION.md
 ```
 
-La carpeta `pages/` ya existe. `HomePage.tsx` muestra la portada y cuatro libros destacados. `CatalogoPage.tsx` muestra el catálogo con `BookCard`; `App.tsx` selecciona la página según la ruta.
+La carpeta `pages/` ya existe. `HomePage.tsx` muestra la portada y ocho libros destacados. `CatalogoPage.tsx` muestra el catálogo con `BookCard`; `App.tsx` selecciona la página según la ruta.
 
 ---
 
@@ -231,12 +237,12 @@ La lógica de `CatalogoPage.tsx` utiliza `useState` y `.filter()`. El valor inic
 
 ### 7.4. Búsqueda de libros
 
-La aplicación permite buscar títulos mediante:
+El formulario del catálogo permite buscar pulsando «Buscar» o Enter por:
 
 - Título del libro.
 - Descripción del libro.
 
-Las búsquedas utilizan métodos de arrays y cadenas de JavaScript.
+La búsqueda se combina con los filtros de categoría y muestra ocho libros por página.
 
 ### 7.5. Buscador global
 
@@ -256,21 +262,21 @@ El diseño utiliza una paleta oscura con tonos burdeos, ciruela, marfil y dorado
 
 ---
 
-## 8. Funcionalidades pendientes
+## 8. Páginas y estado
 
 Las páginas y funcionalidades se encuentran en estas fases:
 
 ### Inicio — `/`
 
-Implementada: presentación de la librería y cuatro libros destacados.
+Presentación de la librería y ocho libros destacados.
 
 ### Catálogo — `/catalogo`
 
-Implementados el listado, los filtros y la búsqueda. La paginación queda pendiente.
+Listado de ocho libros por página, filtros y búsqueda por título o descripción mediante el botón «Buscar».
 
 ### Detalle — `/libro/:id`
 
-Información individual del libro y opción de añadirlo al carrito.
+Imagen, título, autor, descripción, categoría, precio, idioma, stock e identificador, con opción de añadir al carrito. Se accede desde las tarjetas y los resultados de la búsqueda de la cabecera.
 
 ### Favoritos — `/favoritos`
 
@@ -278,9 +284,9 @@ El corazón de cada tarjeta permite guardar o retirar libros. El corazón dorado
 
 ### Carrito — `/carrito`
 
-Se pueden añadir libros desde sus tarjetas, cambiar cantidades con los botones + y −, ver el total y eliminar un título. La bolsa muestra el número total de unidades. La cantidad está limitada por el stock del archivo de datos; vaciar con confirmación y finalizar la compra siguen pendientes.
+Se pueden añadir libros desde sus tarjetas, cambiar cantidades con los botones + y −, ver el total y eliminar un título. La bolsa muestra el número total de unidades. La cantidad está limitada por el stock del archivo de datos; eliminar un título y vaciar el carrito requieren confirmación. Finalizar la compra sigue pendiente.
 
-**Estado:** están configuradas las rutas `/`, `/catalogo`, `/favoritos` y `/carrito`. La página de detalle sigue pendiente. Los favoritos y el carrito se guardan en este navegador y se sincronizan entre sus pestañas. El stock es un dato local de ejemplo, no un inventario compartido ni una reserva.
+**Estado:** están configuradas las rutas `/`, `/catalogo`, `/libro/:id`, `/favoritos` y `/carrito`. Los favoritos y el carrito se guardan en este navegador y se sincronizan entre sus pestañas. El stock es un dato local de ejemplo, no un inventario compartido ni una reserva.
 
 ---
 
@@ -290,7 +296,7 @@ En la revisión del código se han identificado algunos ajustes pendientes:
 
 - Corregir la referencia al favicon, que utiliza `/public/` en lugar de una ruta desde la raíz.
 - Cambiar el idioma del documento HTML a español.
-- Implementar la ruta de detalle y completar las funciones del carrito.
+- Completar las pruebas en navegador y el proceso de compra si se decide incorporarlo.
 
 Estas incidencias están registradas para su corrección durante el desarrollo. Los datos conservan variantes de mayúsculas en categorías; el filtro las compara en minúsculas.
 

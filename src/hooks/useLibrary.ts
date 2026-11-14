@@ -60,5 +60,9 @@ export function useLibrary() {
     return write(cartKey, parse(read(cartKey)).filter(item => item !== id))
   }
 
-  return { favorites, cart, toggleFavorite, addToCart, decreaseQuantity, removeFromCart }
+  function clearCart() {
+    return write(cartKey, [])
+  }
+
+  return { favorites, cart, toggleFavorite, addToCart, decreaseQuantity, removeFromCart, clearCart }
 }

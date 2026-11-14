@@ -7,6 +7,7 @@ import HomePage from './pages/HomePage'
 import CatalogoPage from './pages/CatalogoPage'
 import FavoritosPage from './pages/FavoritosPage'
 import CarritoPage from './pages/CarritoPage'
+import DetalleLibroPage from './pages/DetalleLibroPage'
 
 function App() {
   const { pathname } = useLocation()
@@ -22,6 +23,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/catalogo" element={<CatalogoPage />} />
+          <Route path="/libro/:id" element={<DetalleLibroPage />} />
           <Route path="/favoritos" element={<FavoritosPage />} />
           <Route path="/carrito" element={<CarritoPage />} />
         </Routes>
