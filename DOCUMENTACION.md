@@ -499,7 +499,7 @@ No se ejecutaron nuevamente los comandos `npm run lint` ni `npm run build` duran
 
 ---
 
-### Navegación al catálogo — 14 de noviembre de 2026
+### Navegación al catálogo anterior — 14 de noviembre de 2026
 
 - Los enlaces al catálogo abren una nueva pestaña y anuncian ese comportamiento a lectores de pantalla.
 - Se añadió separación encima del botón «Ver catálogo completo» y se ajustó el desplazamiento para comenzar arriba al cambiar de ruta.
@@ -514,7 +514,7 @@ No se ejecutaron nuevamente los comandos `npm run lint` ni `npm run build` duran
 
 ---
 
-### Favoritos, carrito y transiciones — 14 de noviembre de 2026
+### Favoritos, carrito y transiciones iniciales — 14 de noviembre de 2026
 
 - «Explorar libros» lleva a los destacados de Inicio; «Ver catálogo completo» abre el catálogo en una nueva pestaña.
 - Se suavizó la entrada del contenido y el movimiento de las tarjetas; se respeta la preferencia de movimiento reducido. La entrada en una pestaña nueva no anima la salida de la pestaña anterior.
@@ -522,6 +522,21 @@ No se ejecutaron nuevamente los comandos `npm run lint` ni `npm run build` duran
 - Los datos se guardan en `localStorage` del navegador y se sincronizan entre pestañas. No hay cuenta, pago, control de stock ni sincronización entre dispositivos. La cantidad se aumenta al añadir el libro; los controles individuales de cantidad y el vaciado con confirmación siguen pendientes.
 - Se corrigieron las rutas de los iconos y del logo de la cabecera. El favicon sigue pendiente.
 - Se actualizaron ambos documentos. Se ejecutaron ESLint y compilación en una copia de trabajo; faltan pruebas visuales y funcionales en el navegador.
+
+---
+
+### Catálogo en la misma pestaña y acceso a favoritos — 14 de noviembre de 2026
+
+- Los enlaces de la cabecera y de Inicio abren ahora el catálogo en la misma pestaña.
+- El enlace «Favoritos» de la cabecera se sustituyó por un icono de corazón con una etiqueta accesible.
+- Se actualizaron `README.md` y esta bitácora. Se ejecutaron ESLint y compilación en una copia de trabajo; queda pendiente la comprobación visual en el navegador.
+
+---
+
+### Icono de favoritos — 14 de noviembre de 2026
+
+- Se igualaron el color dorado, el grosor y el tamaño del corazón de la cabecera con los demás iconos, también en móvil.
+- Se actualizaron ambos documentos y se revisó el cambio de estilos; queda pendiente la comprobación visual en el navegador.
 
 ---
 

@@ -41,8 +41,7 @@ function Header() {
             <nav className={`navigation ${buscadorAbierto ? 'search-open' : ''}`} aria-label="Navegación principal">
                 <div className="nav-links">
                     <Link to="/">Inicio</Link>
-                    <Link to="/catalogo" target="_blank" rel="noopener noreferrer" aria-label="Catálogo (se abre en una pestaña nueva)">Catálogo</Link>
-                    <Link to="/favoritos">Favoritos</Link>
+                    <Link to="/catalogo">Catálogo</Link>
                 </div>
 
                 <div className="nav-search">
@@ -67,6 +66,10 @@ function Header() {
                 </div>
 
 
+
+                <Link to="/favoritos" className="nav-icon" aria-label="Ver favoritos">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z" /></svg>
+                </Link>
 
                 <Link
                     to="/carrito"

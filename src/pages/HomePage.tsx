@@ -18,7 +18,7 @@ function HomePage() {
             <BookCard key={book.id} book={book} />
           ))}
         </div>
-        <Link className="primary-button catalog-link" to="/catalogo" target="_blank" rel="noopener noreferrer" aria-label="Ver catálogo completo (se abre en una pestaña nueva)">Ver catálogo completo</Link>
+        <Link className="primary-button catalog-link" to="/catalogo">Ver catálogo completo</Link>
       </section>
     </>
   )
