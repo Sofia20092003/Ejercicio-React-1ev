@@ -1,3 +1,5 @@
+import { Link } from 'react-router'
+
 function Hero(){
     return(
         <section className="hero" id="inicio">
@@ -14,9 +16,9 @@ function Hero(){
                 romances imposibles y secretos que esperan ser revelados.
             </p>
 
-            <a className="primary-button" href="#catalogo">
+            <Link className="primary-button" to="/catalogo" target="_blank" rel="noopener noreferrer" aria-label="Explorar libros (se abre en una pestaña nueva)">
                 Explorar libros
-            </a>
+            </Link>
         </section>
     )
 }

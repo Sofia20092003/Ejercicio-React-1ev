@@ -18,7 +18,7 @@ Su diseño sigue una estética Dark Academia y fantasía, utilizando colores osc
 
 Este documento registra las fases de desarrollo, las decisiones técnicas, los archivos modificados, los problemas detectados y las tareas pendientes.
 
-**Estado a 14 de noviembre de 2026:** proyecto en desarrollo. La versión publicada contiene una vista principal con catálogo, filtros y búsqueda. Existe una primera versión de `CatalogoPage.tsx` sin conectar y `HomePage.tsx` está vacío; las páginas independientes y sus rutas siguen pendientes.
+**Estado a 14 de noviembre de 2026:** proyecto en desarrollo. La copia local tiene rutas independientes para Inicio y Catálogo. Detalle y Carrito están pendientes.
 
 ---
 
@@ -72,10 +72,10 @@ Se ha organizado el código en componentes, datos, tipos y estilos.
 
 ### Páginas en preparación
 
-- `src/pages/CatalogoPage.tsx`: muestra los libros con `BookCard` y `.map()`; todavía no se importa en `App.tsx` ni incluye filtros o búsqueda.
-- `src/pages/HomePage.tsx`: archivo vacío, pendiente de implementación.
+- `src/pages/CatalogoPage.tsx`: muestra los libros con `BookCard` y `.map()`, y contiene la búsqueda y los filtros. Se muestra en `/catalogo`.
+- `src/pages/HomePage.tsx`: muestra portada, introducción y cuatro libros destacados en `/`.
 
-La vista activa y la lógica de filtros y búsqueda siguen en `App.tsx`.
+La vista activa se compone en `App.tsx`; la lógica de filtros y búsqueda reside en `CatalogoPage.tsx`.
 
 ### Datos y tipos
 
@@ -260,7 +260,7 @@ El método `.filter()` permite obtener los libros correspondientes.
 - Condiciones lógicas.
 - Clases CSS dinámicas.
 
-**Incidencia pendiente:** unificar los valores `Todos` y `todos`, así como `Romantasy` y `romantasy`, para garantizar un filtrado correcto.
+**Actualización:** el valor inicial es `todos` y la comparación convierte la categoría del libro a minúsculas. Los datos originales conservan variantes de mayúsculas.
 
 ---
 
@@ -370,15 +370,15 @@ Sin embargo, la condición del filtro compara con:
 
 `categoria === 'todos'`
 
-**Efecto:** al iniciar, la comparación no coincide y pueden aparecer cero resultados hasta seleccionar un filtro.
+**Efecto anterior:** al iniciar, la comparación no coincidía y podían aparecer cero resultados hasta seleccionar un filtro.
 
-**Solución prevista:** utilizar el mismo valor en ambos lugares.
+**Estado actual:** corregido al trasladar el catálogo: el estado inicial utiliza `todos`.
 
 ### 5.2. Diferencias en las categorías del JSON
 
 El primer libro utiliza `Romantasy`, mientras que otros libros utilizan `romantasy`.
 
-**Solución prevista:** normalizar todos los valores de categoría.
+**Estado actual:** el filtro convierte los valores a minúsculas antes de compararlos; los datos originales no se han modificado.
 
 ### 5.3. Referencias a archivos públicos
 
@@ -400,9 +400,9 @@ El archivo `index.html` declara actualmente `lang="en"`.
 
 ### 5.5. Navegación provisional
 
-Los enlaces de Inicio, Catálogo y Carrito todavía utilizan anclas HTML.
+Inicio y Catálogo utilizan rutas de React Router. Carrito sigue enlazando provisionalmente al pie mediante un ancla HTML.
 
-**Solución prevista:** configurar rutas independientes cuando se creen las cuatro páginas.
+**Pendiente:** configurar las rutas de detalle y carrito.
 
 Estas incidencias están documentadas, pero no corregidas mediante esta actualización.
 
@@ -412,7 +412,7 @@ Estas incidencias están documentadas, pero no corregidas mediante esta actualiz
 
 ### Fase 10. Organización de páginas
 
-Completar `HomePage.tsx`, continuar `CatalogoPage.tsx` y crear las páginas de detalle y carrito. Configurar las rutas y trasladar los componentes y la lógica a sus páginas correspondientes. El nombre actual del archivo es `CatalogoPage.tsx`.
+Inicio y Catálogo ya cuentan con rutas separadas. Crear las páginas y rutas de detalle y carrito y evolucionar el catálogo. El nombre actual del archivo es `CatalogoPage.tsx`.
 
 ### Fase 11. Catálogo y paginación
 
@@ -478,6 +478,32 @@ No se ejecutaron nuevamente los comandos `npm run lint` ni `npm run build` duran
 - Se inspeccionaron el estado de Git, `App.tsx`, las páginas existentes, la cabecera, el buscador y la configuración.
 - Se corrigió la descripción de `pages/` en `README.md` y en esta bitácora, y se aclaró la incidencia del filtro inicial.
 - No se ha modificado código ni se han ejecutado instalación, ESLint, compilación o pruebas en navegador durante esta revisión. Esas comprobaciones quedan pendientes para la próxima implementación.
+
+---
+
+### Integración del catálogo — 14 de noviembre de 2026
+
+- Se trasladaron la búsqueda, los filtros y la lista de libros de `App.tsx` a `src/pages/CatalogoPage.tsx`; `App.tsx` ahora incorpora el componente.
+- El estado inicial usa `todos` y se comparan las categorías en minúsculas para contemplar las variantes existentes.
+- Se actualizaron `README.md` y esta bitácora. Las rutas independientes y la validación visual en el navegador siguen pendientes.
+- Se ejecutaron ESLint y la compilación de producción en una copia de trabajo; ambos finalizaron correctamente.
+
+---
+
+### Separación de Inicio y Catálogo — 14 de noviembre de 2026
+
+- Se añadió React Router, se configuraron `/` y `/catalogo`, y se conectaron los enlaces de navegación y portada.
+- `HomePage.tsx` muestra cuatro libros seleccionados de los datos mediante `slice(0, 4)` y reutiliza `BookCard`; el catálogo conserva la búsqueda y los filtros.
+- Se actualizaron ambos documentos. Las páginas de detalle y carrito, la paginación y la validación visual siguen pendientes.
+- Se ejecutaron ESLint y compilación de producción en una copia de trabajo.
+
+---
+
+### Navegación al catálogo — 14 de noviembre de 2026
+
+- Los enlaces al catálogo abren una nueva pestaña y anuncian ese comportamiento a lectores de pantalla.
+- Se añadió separación encima del botón «Ver catálogo completo» y se ajustó el desplazamiento para comenzar arriba al cambiar de ruta.
+- Se actualizaron `README.md` y esta bitácora. Se comprobaron ESLint y compilación en una copia de trabajo; queda pendiente la revisión visual en el navegador.
 
 ---
 

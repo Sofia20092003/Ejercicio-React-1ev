@@ -12,7 +12,7 @@ La librería está especializada en cuatro géneros literarios:
 
 Su identidad visual combina la estética *Dark Academia* con elementos de fantasía: colores oscuros, detalles dorados, ilustraciones y una ambientación inspirada en mundos literarios.
 
-> **Estado del proyecto:** En desarrollo. La vista principal contiene catálogo, filtros y búsqueda, con incidencias conocidas. Existe un primer componente de catálogo que todavía no está conectado; las páginas independientes y sus rutas siguen pendientes.
+> **Estado del proyecto:** En desarrollo. Inicio y Catálogo tienen rutas independientes. Inicio muestra cuatro libros destacados; los enlaces al catálogo lo abren en una nueva pestaña, desde arriba. Catálogo ofrece búsqueda y filtros. Detalle y Carrito siguen pendientes.
 
 ---
 
@@ -21,6 +21,7 @@ Su identidad visual combina la estética *Dark Academia* con elementos de fantas
 | Tecnología | Utilización |
 | --- | --- |
 | React 19 | Construcción de interfaces mediante componentes |
+| React Router | Navegación entre páginas |
 | TypeScript 6 | Tipado y organización del código |
 | Vite 8 | Entorno de desarrollo y compilación |
 | HTML5 | Estructura base |
@@ -163,8 +164,8 @@ Ejercicio-React-1ev/
 │   │   └── SearchOverlay.tsx
 │   │
 │   ├── pages/
-│   │   ├── CatalogoPage.tsx  (primera versión, sin conectar)
-│   │   └── HomePage.tsx      (vacío)
+│   │   ├── CatalogoPage.tsx  (catálogo, búsqueda y filtros)
+│   │   └── HomePage.tsx      (inicio y libros destacados)
 │   │
 │   ├── data/
 │   │   ├── books.json
@@ -185,7 +186,7 @@ Ejercicio-React-1ev/
 └── DOCUMENTACION.md
 ```
 
-La carpeta `pages/` ya existe. `CatalogoPage.tsx` representa los libros con `BookCard`, pero aún no se utiliza en `App.tsx`; `HomePage.tsx` está vacío.
+La carpeta `pages/` ya existe. `HomePage.tsx` muestra la portada y cuatro libros destacados. `CatalogoPage.tsx` muestra el catálogo con `BookCard`; `App.tsx` selecciona la página según la ruta.
 
 ---
 
@@ -226,7 +227,7 @@ La estructura está definida mediante la interfaz `Book` en TypeScript.
 
 Se han incorporado filtros para mostrar los libros según su género literario.
 
-La lógica utiliza el hook `useState` y el método `.filter()`. Hay una incidencia en el valor inicial y otra en algunas categorías; consulta la sección de incidencias.
+La lógica de `CatalogoPage.tsx` utiliza `useState` y `.filter()`. El valor inicial muestra todos los libros y la comparación ignora mayúsculas en las categorías.
 
 ### 7.4. Búsqueda de libros
 
@@ -261,11 +262,11 @@ El objetivo es disponer de cuatro páginas independientes:
 
 ### Inicio — `/`
 
-Presentación de la librería y libros destacados.
+Implementada: presentación de la librería y cuatro libros destacados.
 
 ### Catálogo — `/catalogo`
 
-Visualización de los libros, filtros, búsqueda y paginación.
+Implementados el listado, los filtros y la búsqueda. La paginación queda pendiente.
 
 ### Detalle — `/libro/:id`
 
@@ -275,7 +276,7 @@ Información individual del libro y opción de añadirlo al carrito.
 
 Gestión de productos seleccionados, cantidades, eliminación, vaciado con confirmación y cálculo del importe total.
 
-**Importante:** estas rutas todavía no están configuradas en la versión revisada. La navegación actual funciona mediante anclas HTML.
+**Estado:** las rutas `/` y `/catalogo` están configuradas. Detalle y Carrito todavía no están implementadas; el icono del carrito enlaza provisionalmente al pie.
 
 ---
 
@@ -283,13 +284,11 @@ Gestión de productos seleccionados, cantidades, eliminación, vaciado con confi
 
 En la revisión del código se han identificado algunos ajustes pendientes:
 
-- Unificar el valor `Todos` y `todos` en el estado y los filtros del catálogo.
-- Unificar `Romantasy` y `romantasy` en los datos.
 - Corregir referencias a recursos que utilizan `/public/` en lugar de rutas desde la raíz.
 - Cambiar el idioma del documento HTML a español.
-- Implementar la navegación real entre páginas.
+- Implementar las rutas de detalle y carrito.
 
-Estas incidencias están registradas para su corrección durante el desarrollo. El valor inicial `Todos` no coincide con `todos`, por lo que la vista inicial puede mostrar cero resultados hasta seleccionar un filtro.
+Estas incidencias están registradas para su corrección durante el desarrollo. Los datos conservan variantes de mayúsculas en categorías; el filtro las compara en minúsculas.
 
 ---
 

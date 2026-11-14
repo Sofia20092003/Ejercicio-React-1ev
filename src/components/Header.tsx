@@ -1,3 +1,4 @@
+import { Link } from 'react-router'
 import { useEffect, useRef, useState } from "react"
 import SearchOverlay from "./SearchOverlay";
 
@@ -29,18 +30,18 @@ function Header() {
 
     return(
         <header className="header">
-            <a className="brand" href="#inicio" aria-label="The Hidden Chapter - Inicio">
+            <Link className="brand" to="/" aria-label="The Hidden Chapter - Inicio">
                 <img 
                     src="/public/images/logo-the-hidden-chapter.png"
                     alt=""
                     className="brand-logo"
                 />
-            </a>
+            </Link>
 
             <nav className={`navigation ${buscadorAbierto ? 'search-open' : ''}`} aria-label="Navegación principal">
                 <div className="nav-links">
-                    <a href="#inicio">Inicio</a>
-                    <a href="#catalogo">Catálogo</a>
+                    <Link to="/">Inicio</Link>
+                    <Link to="/catalogo" target="_blank" rel="noopener noreferrer" aria-label="Catálogo (se abre en una pestaña nueva)">Catálogo</Link>
                 </div>
                 
                 <div className="nav-search">
