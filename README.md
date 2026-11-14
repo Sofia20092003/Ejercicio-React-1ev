@@ -12,7 +12,7 @@ La librería está especializada en cuatro géneros literarios:
 
 Su identidad visual combina la estética *Dark Academia* con elementos de fantasía: colores oscuros, detalles dorados, ilustraciones y una ambientación inspirada en mundos literarios.
 
-> **Estado del proyecto:** En desarrollo. Actualmente existe una vista principal con catálogo, filtros y búsqueda. Las páginas independientes de Inicio, Catálogo, Detalle y Carrito todavía están pendientes.
+> **Estado del proyecto:** En desarrollo. La vista principal contiene catálogo, filtros y búsqueda, con incidencias conocidas. Existe un primer componente de catálogo que todavía no está conectado; las páginas independientes y sus rutas siguen pendientes.
 
 ---
 
@@ -162,6 +162,10 @@ Ejercicio-React-1ev/
 │   │   ├── BookCard.tsx
 │   │   └── SearchOverlay.tsx
 │   │
+│   ├── pages/
+│   │   ├── CatalogoPage.tsx  (primera versión, sin conectar)
+│   │   └── HomePage.tsx      (vacío)
+│   │
 │   ├── data/
 │   │   ├── books.json
 │   │   └── books.ts
@@ -181,7 +185,7 @@ Ejercicio-React-1ev/
 └── DOCUMENTACION.md
 ```
 
-Esta estructura representa la versión revisada del repositorio. La futura carpeta `pages/` se documentará cuando se incorpore.
+La carpeta `pages/` ya existe. `CatalogoPage.tsx` representa los libros con `BookCard`, pero aún no se utiliza en `App.tsx`; `HomePage.tsx` está vacío.
 
 ---
 
@@ -222,7 +226,7 @@ La estructura está definida mediante la interfaz `Book` en TypeScript.
 
 Se han incorporado filtros para mostrar los libros según su género literario.
 
-La lógica utiliza el hook `useState` y el método `.filter()`.
+La lógica utiliza el hook `useState` y el método `.filter()`. Hay una incidencia en el valor inicial y otra en algunas categorías; consulta la sección de incidencias.
 
 ### 7.4. Búsqueda de libros
 
@@ -285,7 +289,7 @@ En la revisión del código se han identificado algunos ajustes pendientes:
 - Cambiar el idioma del documento HTML a español.
 - Implementar la navegación real entre páginas.
 
-Estas incidencias están registradas para su corrección durante el desarrollo.
+Estas incidencias están registradas para su corrección durante el desarrollo. El valor inicial `Todos` no coincide con `todos`, por lo que la vista inicial puede mostrar cero resultados hasta seleccionar un filtro.
 
 ---
 

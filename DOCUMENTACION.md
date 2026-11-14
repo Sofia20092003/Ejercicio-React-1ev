@@ -18,7 +18,7 @@ Su diseño sigue una estética Dark Academia y fantasía, utilizando colores osc
 
 Este documento registra las fases de desarrollo, las decisiones técnicas, los archivos modificados, los problemas detectados y las tareas pendientes.
 
-**Estado a 14 de noviembre de 2026:** proyecto en desarrollo. La versión publicada contiene una vista principal con catálogo, filtros y búsqueda. Las cuatro páginas independientes todavía no están implementadas.
+**Estado a 14 de noviembre de 2026:** proyecto en desarrollo. La versión publicada contiene una vista principal con catálogo, filtros y búsqueda. Existe una primera versión de `CatalogoPage.tsx` sin conectar y `HomePage.tsx` está vacío; las páginas independientes y sus rutas siguen pendientes.
 
 ---
 
@@ -69,6 +69,13 @@ Se ha organizado el código en componentes, datos, tipos y estilos.
 - `Footer.tsx`: pie de página.
 - `BookCard.tsx`: tarjeta reutilizable de un libro.
 - `SearchOverlay.tsx`: buscador integrado en la cabecera.
+
+### Páginas en preparación
+
+- `src/pages/CatalogoPage.tsx`: muestra los libros con `BookCard` y `.map()`; todavía no se importa en `App.tsx` ni incluye filtros o búsqueda.
+- `src/pages/HomePage.tsx`: archivo vacío, pendiente de implementación.
+
+La vista activa y la lógica de filtros y búsqueda siguen en `App.tsx`.
 
 ### Datos y tipos
 
@@ -363,6 +370,8 @@ Sin embargo, la condición del filtro compara con:
 
 `categoria === 'todos'`
 
+**Efecto:** al iniciar, la comparación no coincide y pueden aparecer cero resultados hasta seleccionar un filtro.
+
 **Solución prevista:** utilizar el mismo valor en ambos lugares.
 
 ### 5.2. Diferencias en las categorías del JSON
@@ -403,14 +412,7 @@ Estas incidencias están documentadas, pero no corregidas mediante esta actualiz
 
 ### Fase 10. Organización de páginas
 
-Crear:
-
-- `HomePage.tsx`
-- `CatalogPage.tsx`
-- `BookDetailPage.tsx`
-- `CartPage.tsx`
-
-Configurar las rutas y trasladar los componentes y la lógica a sus páginas correspondientes.
+Completar `HomePage.tsx`, continuar `CatalogoPage.tsx` y crear las páginas de detalle y carrito. Configurar las rutas y trasladar los componentes y la lógica a sus páginas correspondientes. El nombre actual del archivo es `CatalogoPage.tsx`.
 
 ### Fase 11. Catálogo y paginación
 
@@ -471,6 +473,14 @@ No se ejecutaron nuevamente los comandos `npm run lint` ni `npm run build` duran
 
 ---
 
+### Revisión local de documentación — 14 de noviembre de 2026
+
+- Se inspeccionaron el estado de Git, `App.tsx`, las páginas existentes, la cabecera, el buscador y la configuración.
+- Se corrigió la descripción de `pages/` en `README.md` y en esta bitácora, y se aclaró la incidencia del filtro inicial.
+- No se ha modificado código ni se han ejecutado instalación, ESLint, compilación o pruebas en navegador durante esta revisión. Esas comprobaciones quedan pendientes para la próxima implementación.
+
+---
+
 ## 8. Mantenimiento de la documentación
 
 Después de cada nueva implementación se registrará:
@@ -484,7 +494,7 @@ Después de cada nueva implementación se registrará:
 7. Comprobaciones realizadas.
 8. Tareas pendientes.
 
-El archivo `README.md` también se actualizará cuando cambien la instalación, la configuración, las funcionalidades o la estructura del proyecto.
+En cada implementación se revisarán y actualizarán `README.md` y `DOCUMENTACION.md` en español para reflejar los cambios realizados, las comprobaciones y los pendientes, sin presentar como realizadas pruebas que no se hayan ejecutado.
 
 ---
 
