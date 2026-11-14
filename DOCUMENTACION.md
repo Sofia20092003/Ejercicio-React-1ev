@@ -563,6 +563,15 @@ No se ejecutaron nuevamente los comandos `npm run lint` ni `npm run build` duran
 
 ---
 
+### Fichas y selección de cantidades — 14 de noviembre de 2026
+
+- Se retiraron los campos de carrito e identificador de la ficha. Las fichas y las tarjetas permiten seleccionar varias unidades antes de añadirlas, sin superar el stock que queda por añadir.
+- Se añadieron secciones de resumen y autor. Los textos sobre los libros amplían las descripciones ya existentes en el proyecto y requieren revisión editorial. Diez perfiles de autores incluyen datos y enlaces a fuentes; para los demás se muestra únicamente información del catálogo y queda pendiente ampliar su biografía.
+- Los datos de contexto y las fuentes están en `src/data/detallesLibros.ts`; el control reutilizable está en `src/components/QuantitySelector.tsx`.
+- Se actualizaron ambos documentos. ESLint y compilación finalizaron correctamente; se probó con datos simulados la adición de varias unidades, el límite y las cantidades no válidas. Queda pendiente la prueba visual e interactiva en el navegador.
+
+---
+
 ## 8. Mantenimiento de la documentación
 
 Después de cada nueva implementación se registrará:

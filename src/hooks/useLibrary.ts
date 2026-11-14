@@ -42,11 +42,11 @@ export function useLibrary() {
     return write(favoriteKey, current.includes(id) ? current.filter(item => item !== id) : [...current, id])
   }
 
-  function addToCart(id: number): 'added' | 'limit' | 'error' {
+  function addToCart(id: number, quantity = 1): 'added' | 'limit' | 'error' {
     const current = parse(read(cartKey))
     const book = books.find(item => item.id === id)
-    if (!book || current.filter(item => item === id).length >= book.stock) return 'limit'
-    return write(cartKey, [...current, id]) ? 'added' : 'error'
+    if (!book || !Number.isSafeInteger(quantity) || quantity < 1 || current.filter(item => item === id).length + quantity > book.stock) return 'limit'
+    return write(cartKey, [...current, ...Array<number>(quantity).fill(id)]) ? 'added' : 'error'
   }
 
   function decreaseQuantity(id: number) {

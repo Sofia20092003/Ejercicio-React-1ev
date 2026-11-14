@@ -803,3 +803,13 @@ html { scroll-behavior: smooth; }
 .empty-cart-button { padding: 0.8rem 1rem; border: 1px solid var(--color-gold); border-radius: 0.5rem; background: transparent; color: var(--color-ivory); cursor: pointer; }
 .empty-cart-button:hover { background: var(--color-gold); color: var(--color-ink); }
 @media (max-width: 40rem) { .detail-layout { grid-template-columns: 1fr; } .detail-cover { max-width: 18rem; } .search-actions { flex-wrap: wrap; } }
+
+.quantity-picker { display: flex; align-items: center; gap: 0.65rem; flex-wrap: wrap; color: var(--color-ivory); font-size: 0.85rem; }
+.quantity-picker > span:first-child { margin-right: auto; }
+.quantity-picker button { display: grid; place-items: center; width: 2.1rem; height: 2.1rem; padding: 0; border: 1px solid var(--color-gold); border-radius: 0.4rem; background: transparent; color: var(--color-ivory); font-size: 1.1rem; cursor: pointer; }
+.quantity-picker button:hover:not(:disabled) { background: var(--color-gold); color: var(--color-ink); }
+.quantity-picker button:disabled { opacity: 0.45; cursor: not-allowed; }
+.detail-sections { max-width: 50rem; margin: 3rem 0 0; color: var(--color-ivory); line-height: 1.8; }
+.detail-sections h2 { color: var(--color-gold); font: 400 1.7rem Georgia, serif; margin-top: 2rem; }
+.detail-sections a { color: var(--color-gold); text-decoration: underline; }
+.detail-add { margin-top: 1.25rem; }

@@ -1,0 +1,41 @@
+// Contexto de lectura redactado a partir de las descripciones del catálogo.
+export const contextoLibros: Record<number, string> = {
+  1: 'La formación enfrenta a Violet a un entorno exigente donde la supervivencia depende de sus decisiones y de su capacidad para desenvolverse entre futuros jinetes de dragones.',
+  2: 'El viaje de Feyre la aleja de todo lo que conoce y la introduce en un mundo de fantasía, secretos y vínculos que transforman su vida.',
+  3: 'Criada en un lugar donde las intrigas forman parte de la vida cotidiana, Jude tendrá que encontrar su sitio en una corte que no es la suya.',
+  4: 'La llegada de un guardia altera la vida que Poppy ha conocido y la lleva a cuestionar las reglas y el destino que otros han trazado para ella.',
+  5: 'La historia acompaña a Lily en una etapa de cambios personales y explora las decisiones que debe afrontar en sus relaciones y en su nueva vida.',
+  6: 'En el entorno académico de Olive, lo que comienza como un acuerdo para aparentar una relación se convierte en una situación que desafía sus expectativas.',
+  7: 'La llegada a la universidad abre para Jenna un periodo de descubrimientos, relaciones y decisiones que marcarán su nueva etapa.',
+  8: 'A través de los encuentros entre ambos compañeros de instituto, el primer volumen sigue cómo su amistad empieza a transformarse en un vínculo más profundo.',
+  9: 'A medida que conoce a nuevos amigos y vive sus primeras experiencias en el instituto, Charlie intenta comprender los cambios que acompañan al crecimiento.',
+  10: 'La relación entre Hasley y Luke ocupa el centro de una historia juvenil que aborda el amor, las emociones y la forma en que dos vidas pueden transformarse al encontrarse.',
+  11: 'En el ambiente universitario de Yale, Alex debe acercarse a sociedades secretas y enfrentarse al peligro de las prácticas mágicas que está encargada de vigilar.',
+  12: 'La misión reúne a personas con talentos muy distintos. Para intentar completar el golpe, el grupo deberá poner a prueba sus habilidades y su capacidad de colaborar.',
+  13: 'La joven protagonista se incorpora a un plan contra un poder aparentemente invencible. Sus capacidades serán parte de la lucha por desafiar el dominio del imperio.',
+  14: 'De vuelta en Basgiath, Violet debe afrontar nuevas exigencias mientras los secretos y las amenazas ponen a prueba su confianza y sus lealtades.',
+  15: 'Feyre intenta encontrar su camino después de lo vivido Bajo la Montaña. En Prythian, deberá enfrentarse tanto a las consecuencias del pasado como a las posibilidades de su futuro.',
+  16: 'En un torneo donde sobrevivir es el primer objetivo, Oraya se enfrenta a un mundo de vampiros y al difícil reto de elegir en quién puede confiar.',
+  17: 'Desde su propio relato, Kvothe reconstruye los años de formación y las experiencias que alimentaron la leyenda que otras personas cuentan sobre él.',
+  18: 'La historia reúne perspectivas de distintos lugares de un mundo dividido. Ante un peligro antiguo, sus personajes deberán afrontar las creencias y decisiones que los separan.',
+  19: 'Las facetas personal y profesional de Elsie se cruzan cuando conoce a un físico experimental. El encuentro altera la doble vida que había aprendido a mantener.',
+  20: 'Las vacaciones compartidas forman parte de la historia de Poppy y Alex. Tras una experiencia que cambia su relación, ambos deben mirar de nuevo su amistad y sus sentimientos.',
+  21: 'El regreso de Mae la enfrenta a recuerdos y reencuentros. Desde ese lugar conocido, intenta decidir cómo quiere construir su futuro.',
+  22: 'La historia aborda una realidad dolorosa desde el deseo de un niño de desaparecer de la mirada de los demás, e invita a reflexionar sobre el acoso y la empatía.',
+  23: 'En una nueva temporada en la casa de la playa, Belly vuelve a compartir tiempo con personas importantes para ella mientras sus sentimientos y su manera de ver el mundo cambian.',
+  24: 'Cuando Raquel y Ares empiezan a acercarse, ella descubre que conocer a alguien de verdad puede ser más complejo que observarlo desde la distancia.',
+}
+
+// Datos biográficos contrastados en las páginas de las autoras y sus editoriales.
+export const autoresVerificados: Record<string, { texto: string; fuente: string }> = {
+  'Rebecca Yarros': { texto: 'Rebecca Yarros es una escritora de novelas románticas y de fantasía. Es la autora de la serie Empíreo, a la que pertenecen Alas de sangre y Alas de hierro.', fuente: 'https://www.planetadelibros.com/libro-pack-serie-empireo-libros-i-y-ii/459767' },
+  'Joana Marcús': { texto: 'Joana Marcús nació en Mallorca y comenzó a publicar sus historias en Wattpad. Es autora de Antes de diciembre y de la trilogía Fuego.', fuente: 'https://www.planetadelibros.com/autor/joana-marcus/000056632' },
+  'Colleen Hoover': { texto: 'Colleen Hoover publicó su primera novela, Amor en verso, en 2012. Entre sus obras también se encuentran Hopeless y Confess.', fuente: 'https://www.penguinlibros.com/es/5619-colleen-hoover' },
+  'Inma Rubiales': { texto: 'Inma Rubiales es una escritora extremeña de romance juvenil. Su primera novela llegó al papel tras publicarse en Wattpad.', fuente: 'https://www.planetadelibros.com/autor/inma-rubiales/000056764' },
+  'Ariana Godoy': { texto: 'Ariana Godoy es una escritora venezolana que comenzó a compartir sus historias en Wattpad durante su adolescencia.', fuente: 'https://www.planetadelibros.com/autor/ariana-godoy/000044932' },
+  'Jenny Han': { texto: 'Jenny Han es autora de las series El verano en que me enamoré y A todos los chicos de los que me enamoré. También ha trabajado como bibliotecaria.', fuente: 'https://www.simonandschuster.com/authors/Jenny-Han/33419149' },
+  'Holly Black': { texto: 'Holly Black escribe novelas de fantasía y es una de las creadoras de Las crónicas de Spiderwick. Entre sus obras también se encuentran los libros ambientados en Elfhame.', fuente: 'https://blackholly.com/about/' },
+  'Leigh Bardugo': { texto: 'Leigh Bardugo es una escritora de fantasía y creadora del Grishaverso. También es autora de la serie La novena casa.', fuente: 'https://www.penguinlibros.com/es/5267-leigh-bardugo' },
+  'Alice Oseman': { texto: 'Alice Oseman es una persona escritora, ilustradora y guionista, creadora de Heartstopper.', fuente: 'https://aliceoseman.com/about/press-kit/' },
+  'Brandon Sanderson': { texto: 'Brandon Sanderson es un escritor de fantasía nacido en Lincoln, Nebraska. El imperio final pertenece a su obra de ficción fantástica.', fuente: 'https://www.brandonsanderson.com/pages/about-brandon' },
+}

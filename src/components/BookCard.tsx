@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router'
 import { useLibrary } from '../hooks/useLibrary'
 import type { Book } from '../types/Book'
+import QuantitySelector from './QuantitySelector'
 
 interface BookCardProps {
   book: Book
@@ -10,16 +11,20 @@ interface BookCardProps {
 function BookCard({ book }: BookCardProps) {
   const { favorites, cart, toggleFavorite, addToCart } = useLibrary()
   const [mensaje, setMensaje] = useState('')
+  const [cantidad, setCantidad] = useState(1)
   const favorito = favorites.includes(book.id)
   const enCarrito = cart.filter(id => id === book.id).length
+  const disponible = Math.max(0, book.stock - enCarrito)
+  const cantidadSeleccionada = Math.min(cantidad, disponible)
 
   function cambiarFavorito() {
     setMensaje(toggleFavorite(book.id) ? (favorito ? 'Eliminado de favoritos' : 'Añadido a favoritos') : 'No se pudo guardar en este navegador')
   }
 
   function anadirAlCarrito() {
-    const resultado = addToCart(book.id)
-    setMensaje(resultado === 'added' ? 'Añadido al carrito' : resultado === 'limit' ? 'No quedan más unidades disponibles' : 'No se pudo guardar en este navegador')
+    const resultado = addToCart(book.id, cantidadSeleccionada)
+    if (resultado === 'added') setCantidad(1)
+    setMensaje(resultado === 'added' ? `${cantidadSeleccionada} ${cantidadSeleccionada === 1 ? 'unidad añadida' : 'unidades añadidas'} al carrito` : resultado === 'limit' ? 'No quedan más unidades disponibles' : 'No se pudo guardar en este navegador')
   }
 
   return (
@@ -38,7 +43,8 @@ function BookCard({ book }: BookCardProps) {
         <p className="book-stock">{book.stock > 0 ? `Stock: ${book.stock} unidades · En tu carrito: ${enCarrito}` : 'Sin stock'}</p>
         <p className="book-price">{book.precio.toFixed(2)} €</p>
         <Link className="detail-link" to={`/libro/${book.id}`}>Ver detalles</Link>
-        <button className="add-cart-button" type="button" onClick={anadirAlCarrito} disabled={enCarrito >= book.stock}>{enCarrito >= book.stock ? 'Máximo disponible' : 'Añadir al carrito'}</button>
+        <QuantitySelector cantidad={cantidadSeleccionada} disponible={disponible} onChange={setCantidad} titulo={book.titulo} />
+        <button className="add-cart-button" type="button" onClick={anadirAlCarrito} disabled={disponible === 0}>{enCarrito >= book.stock ? 'Máximo disponible' : 'Añadir al carrito'}</button>
         <span className="book-feedback" role="status">{mensaje}</span>
       </div>
     </article>

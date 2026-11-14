@@ -276,7 +276,7 @@ Listado de ocho libros por página, filtros y búsqueda por título o descripci�
 
 ### Detalle — `/libro/:id`
 
-Imagen, título, autor, descripción, categoría, precio, idioma, stock e identificador, con opción de añadir al carrito. Se accede desde las tarjetas y los resultados de la búsqueda de la cabecera.
+Imagen, título, autor, resumen, categoría, precio e idioma, junto con el stock y un selector para añadir varias unidades al carrito. La ficha incluye una sección sobre el autor; las biografías verificadas disponibles enlazan a sus fuentes y las demás quedan pendientes de ampliar. Se accede desde las tarjetas y los resultados de la búsqueda de la cabecera.
 
 ### Favoritos — `/favoritos`
 
@@ -284,7 +284,7 @@ El corazón de cada tarjeta permite guardar o retirar libros. El corazón dorado
 
 ### Carrito — `/carrito`
 
-Se pueden añadir libros desde sus tarjetas, cambiar cantidades con los botones + y −, ver el total y eliminar un título. La bolsa muestra el número total de unidades. La cantidad está limitada por el stock del archivo de datos; eliminar un título y vaciar el carrito requieren confirmación. Finalizar la compra sigue pendiente.
+Se pueden elegir varias unidades desde las tarjetas o la ficha y añadirlas al carrito, cambiar cantidades con los botones + y −, ver el total y eliminar un título. La bolsa muestra el número total de unidades. La cantidad está limitada por el stock del archivo de datos; eliminar un título y vaciar el carrito requieren confirmación. Finalizar la compra sigue pendiente.
 
 **Estado:** están configuradas las rutas `/`, `/catalogo`, `/libro/:id`, `/favoritos` y `/carrito`. Los favoritos y el carrito se guardan en este navegador y se sincronizan entre sus pestañas. El stock es un dato local de ejemplo, no un inventario compartido ni una reserva.
 
