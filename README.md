@@ -1,61 +1,316 @@
-# The Hidden Chapter
 
-Prototipo web de una librería de fantasía, romantasy, romance y literatura juvenil. La página actual incluye una cabecera, una portada, una introducción al catálogo y un pie de página. Los enlaces del menú son anclas de la misma página.
+# 📚 The Hidden Chapter
 
-El proyecto utiliza React para la interfaz, TypeScript para el código, Vite para el desarrollo y la compilación, y ESLint para el análisis estático.
+**The Hidden Chapter** es una aplicación web de una librería ficticia, desarrollada como proyecto académico para la asignatura de Desarrollo Web en Entorno Cliente (DWEC), del Ciclo Superior de Desarrollo de Aplicaciones Web (DAW).
 
-## 1. Preparar el entorno
+La librería está especializada en cuatro géneros literarios:
 
-1. Instala Git desde [su página de descargas](https://git-scm.com/downloads) para obtener el código.
-2. Instala **Node.js 24 LTS** desde [la página de Node.js](https://nodejs.org/en/download). El instalador incluye npm, que descarga las dependencias y ejecuta los comandos del proyecto.
-3. Abre una terminal (PowerShell en Windows o Terminal en macOS y Linux) y comprueba que los tres comandos muestran una versión. Si acabas de instalar alguna herramienta y el comando no se reconoce, vuelve a abrir la terminal.
+- Fantasía
+- Romantasy
+- Romance
+- Literatura juvenil
 
-```sh
+Su identidad visual combina la estética *Dark Academia* con elementos de fantasía: colores oscuros, detalles dorados, ilustraciones y una ambientación inspirada en mundos literarios.
+
+> **Estado del proyecto:** En desarrollo. Actualmente existe una vista principal con catálogo, filtros y búsqueda. Las páginas independientes de Inicio, Catálogo, Detalle y Carrito todavía están pendientes.
+
+---
+
+## 1. Tecnologías utilizadas
+
+| Tecnología | Utilización |
+| --- | --- |
+| React 19 | Construcción de interfaces mediante componentes |
+| TypeScript 6 | Tipado y organización del código |
+| Vite 8 | Entorno de desarrollo y compilación |
+| HTML5 | Estructura base |
+| CSS3 | Diseño, estilos y responsive |
+| JSON | Almacenamiento local de los libros |
+| ESLint | Análisis estático del código |
+| Git y GitHub | Control de versiones |
+
+Las versiones exactas de las dependencias se encuentran en `package.json` y `package-lock.json`.
+
+La aplicación no necesita una base de datos ni un servidor backend.
+
+---
+
+## 2. Requisitos previos
+
+Antes de instalar el proyecto, es necesario disponer de:
+
+1. **Git:** https://git-scm.com/downloads
+2. **Node.js 24:** https://nodejs.org/en/download
+3. **npm:** incluido con Node.js.
+4. Un navegador web moderno.
+5. Un editor de código, preferiblemente Visual Studio Code.
+
+Para comprobar que Git, Node.js y npm están instalados, ejecutar en la terminal:
+
+```bash
 git --version
 node --version
 npm --version
 ```
 
-## 2. Descargar e instalar
+Durante el desarrollo se ha utilizado Node.js 24 y npm 11.
 
-Desde la carpeta donde quieras guardar el proyecto, ejecuta:
+---
 
-```sh
+## 3. Instalación del proyecto
+
+### 3.1. Clonar el repositorio
+
+Abrir una terminal y ejecutar:
+
+```bash
 git clone https://github.com/Sofia20092003/Ejercicio-React-1ev.git
+```
+
+### 3.2. Acceder a la carpeta
+
+```bash
 cd Ejercicio-React-1ev
+```
+
+### 3.3. Instalar las dependencias
+
+```bash
 npm ci
 ```
 
-Ejecuta los comandos de npm desde esa carpeta, donde están `package.json` y `package-lock.json`. `npm ci` instala en `node_modules/` las versiones registradas en el archivo de bloqueo. Para una primera instalación se necesita acceso al registro de npm.
+Este comando instala las dependencias registradas en `package-lock.json`, manteniendo las versiones previstas para el proyecto.
 
-La configuración está incluida. `vite.config.ts` activa el complemento de React, los archivos `tsconfig*.json` configuran TypeScript y `eslint.config.js` define las reglas de análisis. Para ejecutar la página basta con instalar las dependencias. No hay que crear un archivo `.env`, introducir credenciales ni arrancar un servidor de datos.
+### 3.4. Configuración
 
-## 3. Ejecutar en desarrollo
+El proyecto incluye los archivos necesarios:
 
-```sh
+- `package.json`: dependencias y comandos.
+- `package-lock.json`: versiones de las dependencias.
+- `vite.config.ts`: configuración de Vite.
+- `tsconfig.json` y archivos asociados: configuración de TypeScript.
+- `eslint.config.js`: configuración de ESLint.
+
+Actualmente no es necesario crear archivos `.env`, configurar credenciales ni iniciar una base de datos.
+
+---
+
+## 4. Ejecutar la aplicación
+
+Para iniciar el servidor de desarrollo:
+
+```bash
 npm run dev
 ```
 
-Abre en el navegador la dirección **Local** que imprime Vite, normalmente `http://localhost:5173/`. Si ese puerto está ocupado, usa el que indique la terminal. Verás la portada de The Hidden Chapter. «Explorar libros» enlaza con la introducción al catálogo y «Carrito» enlaza con el pie de página. Mantén la terminal abierta mientras uses la aplicación y pulsa `Ctrl+C` para detenerla.
+Vite mostrará una dirección local, normalmente:
 
-## 4. Revisar, compilar y previsualizar
+http://localhost:5173/
 
-```sh
+Abrir esa dirección en el navegador.
+
+Para detener el servidor, utilizar `Ctrl+C` en la terminal.
+
+---
+
+## 5. Comandos disponibles
+
+| Comando | Función |
+| --- | --- |
+| `npm run dev` | Inicia el servidor de desarrollo |
+| `npm run build` | Comprueba TypeScript y genera la compilación |
+| `npm run preview` | Permite visualizar la versión compilada |
+| `npm run lint` | Analiza el código mediante ESLint |
+
+Para comprobar y compilar el proyecto:
+
+```bash
 npm run lint
 npm run build
+```
+
+Para previsualizar la compilación:
+
+```bash
 npm run preview
 ```
 
-- `npm run lint` ejecuta ESLint sobre el proyecto.
-- `npm run build` comprueba el código con TypeScript y genera la versión compilada en `dist/`.
-- `npm run preview` sirve esa carpeta para revisarla localmente. Ejecútalo después de compilar y abre la dirección que muestra Vite, normalmente `http://localhost:4173/`. Pulsa `Ctrl+C` para cerrar la vista previa.
+La versión compilada se genera en la carpeta `dist/`.
 
-Si npm indica que no encuentra `package.json`, vuelve a la carpeta del repositorio. Si señala una versión incompatible de Node.js, comprueba `node --version` y usa Node.js 24 antes de repetir `npm ci`.
+---
 
-## Estructura principal
+## 6. Estructura del proyecto
 
-- `index.html` contiene el punto de montaje de React y referencia el icono `public/favicon.svg`.
-- `src/main.tsx` monta `App` y carga los estilos globales de `src/index.css`.
-- `src/App.tsx` contiene la estructura y los textos de la página.
+```text
+Ejercicio-React-1ev/
+├── public/
+│   ├── icons/
+│   │   ├── favicon-the-hidden-chapter.png
+│   │   ├── search.svg
+│   │   └── shopping-bag.svg
+│   └── images/
+│       ├── hero-background.png
+│       ├── logo-the-hidden-chapter.png
+│       └── [portadas de los libros]
+│
+├── src/
+│   ├── components/
+│   │   ├── Header.tsx
+│   │   ├── Hero.tsx
+│   │   ├── Intro.tsx
+│   │   ├── Footer.tsx
+│   │   ├── BookCard.tsx
+│   │   └── SearchOverlay.tsx
+│   │
+│   ├── data/
+│   │   ├── books.json
+│   │   └── books.ts
+│   │
+│   ├── types/
+│   │   └── Book.ts
+│   │
+│   ├── App.tsx
+│   ├── App.css
+│   ├── index.css
+│   └── main.tsx
+│
+├── index.html
+├── package.json
+├── package-lock.json
+├── README.md
+└── DOCUMENTACION.md
+```
 
-Consulta la [bitácora técnica](DOCUMENTACION.md) para ver el estado de la implementación y el registro de cambios.
+Esta estructura representa la versión revisada del repositorio. La futura carpeta `pages/` se documentará cuando se incorpore.
+
+---
+
+## 7. Funcionalidades implementadas
+
+### 7.1. Componentes reutilizables
+
+La aplicación está organizada mediante componentes de React para separar las distintas partes de la interfaz.
+
+Componentes principales:
+
+- `Header`: cabecera y navegación.
+- `Hero`: portada principal.
+- `Intro`: presentación de la librería.
+- `Footer`: pie de página.
+- `BookCard`: representación de un libro.
+- `SearchOverlay`: buscador desplegable integrado en la cabecera.
+
+### 7.2. Catálogo de libros
+
+El catálogo contiene 24 libros almacenados en `src/data/books.json`.
+
+Cada libro incluye:
+
+- Identificador
+- Título
+- Autor
+- Descripción
+- Categoría
+- Precio
+- Imagen
+- Idioma
+- Stock
+
+La estructura está definida mediante la interfaz `Book` en TypeScript.
+
+### 7.3. Filtros de categorías
+
+Se han incorporado filtros para mostrar los libros según su género literario.
+
+La lógica utiliza el hook `useState` y el método `.filter()`.
+
+### 7.4. Búsqueda de libros
+
+La aplicación permite buscar títulos mediante:
+
+- Título del libro.
+- Descripción del libro.
+
+Las búsquedas utilizan métodos de arrays y cadenas de JavaScript.
+
+### 7.5. Buscador global
+
+La cabecera incorpora un buscador expandible que permite:
+
+- Abrir el campo de búsqueda mediante la lupa.
+- Cerrar el campo con la X.
+- Cerrar el buscador mediante la tecla Escape.
+- Mostrar hasta cuatro resultados.
+- Visualizar miniaturas de las portadas.
+
+### 7.6. Diseño responsive
+
+Se utilizan CSS Grid, Flexbox, media queries y unidades relativas como `rem` para adaptar la interfaz a distintos tamaños de pantalla.
+
+El diseño utiliza una paleta oscura con tonos burdeos, ciruela, marfil y dorado.
+
+---
+
+## 8. Funcionalidades pendientes
+
+El objetivo es disponer de cuatro páginas independientes:
+
+### Inicio — `/`
+
+Presentación de la librería y libros destacados.
+
+### Catálogo — `/catalogo`
+
+Visualización de los libros, filtros, búsqueda y paginación.
+
+### Detalle — `/libro/:id`
+
+Información individual del libro y opción de añadirlo al carrito.
+
+### Carrito — `/carrito`
+
+Gestión de productos seleccionados, cantidades, eliminación, vaciado con confirmación y cálculo del importe total.
+
+**Importante:** estas rutas todavía no están configuradas en la versión revisada. La navegación actual funciona mediante anclas HTML.
+
+---
+
+## 9. Incidencias conocidas
+
+En la revisión del código se han identificado algunos ajustes pendientes:
+
+- Unificar el valor `Todos` y `todos` en el estado y los filtros del catálogo.
+- Unificar `Romantasy` y `romantasy` en los datos.
+- Corregir referencias a recursos que utilizan `/public/` en lugar de rutas desde la raíz.
+- Cambiar el idioma del documento HTML a español.
+- Implementar la navegación real entre páginas.
+
+Estas incidencias están registradas para su corrección durante el desarrollo.
+
+---
+
+## 10. Documentación técnica
+
+El proyecto dispone de un segundo archivo de documentación:
+
+[Consultar DOCUMENTACION.md](DOCUMENTACION.md)
+
+En él se registran:
+
+- Pasos del desarrollo.
+- Decisiones técnicas.
+- Componentes creados.
+- Funcionalidades implementadas.
+- Problemas y soluciones.
+- Modificaciones de archivos.
+- Pruebas y comprobaciones.
+
+La documentación se actualizará conforme avance el proyecto.
+
+---
+
+## 11. Autoría
+
+Proyecto académico desarrollado por Ángela Sofía Rodríguez Arciniegas.
+
+Repositorio: https://github.com/Sofia20092003/Ejercicio-React-1ev
