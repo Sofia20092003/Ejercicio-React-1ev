@@ -18,7 +18,7 @@ Su diseño sigue una estética Dark Academia y fantasía, utilizando colores osc
 
 Este documento registra las fases de desarrollo, las decisiones técnicas, los archivos modificados, los problemas detectados y las tareas pendientes.
 
-**Estado a 14 de noviembre de 2026:** proyecto en desarrollo. La copia local tiene rutas independientes para Inicio y Catálogo. Detalle y Carrito están pendientes.
+**Estado a 14 de noviembre de 2026:** proyecto en desarrollo. La copia local tiene rutas para Inicio, Catálogo, Favoritos y un carrito básico. Detalle y el proceso de compra están pendientes.
 
 ---
 
@@ -390,7 +390,7 @@ Por ejemplo:
 
 `/images/logo-the-hidden-chapter.png`
 
-**Solución prevista:** revisar las rutas del Header y el favicon.
+**Estado actual:** se corrigieron las rutas del Header; queda pendiente la del favicon.
 
 ### 5.4. Idioma del documento HTML
 
@@ -400,11 +400,11 @@ El archivo `index.html` declara actualmente `lang="en"`.
 
 ### 5.5. Navegación provisional
 
-Inicio y Catálogo utilizan rutas de React Router. Carrito sigue enlazando provisionalmente al pie mediante un ancla HTML.
+Inicio, Catálogo, Favoritos y Carrito utilizan rutas de React Router.
 
-**Pendiente:** configurar las rutas de detalle y carrito.
+**Pendiente:** configurar la ruta de detalle y completar las funciones del carrito.
 
-Estas incidencias están documentadas, pero no corregidas mediante esta actualización.
+Las incidencias pendientes se mantienen para futuras actualizaciones; las correcciones realizadas se indican en cada apartado.
 
 ---
 
@@ -412,7 +412,7 @@ Estas incidencias están documentadas, pero no corregidas mediante esta actualiz
 
 ### Fase 10. Organización de páginas
 
-Inicio y Catálogo ya cuentan con rutas separadas. Crear las páginas y rutas de detalle y carrito y evolucionar el catálogo. El nombre actual del archivo es `CatalogoPage.tsx`.
+Inicio, Catálogo, Favoritos y Carrito cuentan con rutas separadas. Crear la página de detalle y evolucionar el catálogo. El nombre actual del archivo es `CatalogoPage.tsx`.
 
 ### Fase 11. Catálogo y paginación
 
@@ -504,6 +504,24 @@ No se ejecutaron nuevamente los comandos `npm run lint` ni `npm run build` duran
 - Los enlaces al catálogo abren una nueva pestaña y anuncian ese comportamiento a lectores de pantalla.
 - Se añadió separación encima del botón «Ver catálogo completo» y se ajustó el desplazamiento para comenzar arriba al cambiar de ruta.
 - Se actualizaron `README.md` y esta bitácora. Se comprobaron ESLint y compilación en una copia de trabajo; queda pendiente la revisión visual en el navegador.
+
+---
+
+### Ajuste del botón del catálogo — 14 de noviembre de 2026
+
+- Se centró el botón «Ver catálogo completo» bajo la cuadrícula y se le aplicó el mismo radio de esquina que a las tarjetas (`0.5rem`).
+- Se actualizaron `README.md` y esta bitácora. La comprobación visual en el navegador queda pendiente.
+
+---
+
+### Favoritos, carrito y transiciones — 14 de noviembre de 2026
+
+- «Explorar libros» lleva a los destacados de Inicio; «Ver catálogo completo» abre el catálogo en una nueva pestaña.
+- Se suavizó la entrada del contenido y el movimiento de las tarjetas; se respeta la preferencia de movimiento reducido. La entrada en una pestaña nueva no anima la salida de la pestaña anterior.
+- Cada tarjeta permite marcar favoritos y añadir libros al carrito. La página `/favoritos` muestra la selección y `/carrito` muestra cantidades, total y eliminación por título.
+- Los datos se guardan en `localStorage` del navegador y se sincronizan entre pestañas. No hay cuenta, pago, control de stock ni sincronización entre dispositivos. La cantidad se aumenta al añadir el libro; los controles individuales de cantidad y el vaciado con confirmación siguen pendientes.
+- Se corrigieron las rutas de los iconos y del logo de la cabecera. El favicon sigue pendiente.
+- Se actualizaron ambos documentos. Se ejecutaron ESLint y compilación en una copia de trabajo; faltan pruebas visuales y funcionales en el navegador.
 
 ---
 

@@ -31,8 +31,8 @@ function Header() {
     return(
         <header className="header">
             <Link className="brand" to="/" aria-label="The Hidden Chapter - Inicio">
-                <img 
-                    src="/public/images/logo-the-hidden-chapter.png"
+                <img
+                    src="/images/logo-the-hidden-chapter.png"
                     alt=""
                     className="brand-logo"
                 />
@@ -42,8 +42,9 @@ function Header() {
                 <div className="nav-links">
                     <Link to="/">Inicio</Link>
                     <Link to="/catalogo" target="_blank" rel="noopener noreferrer" aria-label="Catálogo (se abre en una pestaña nueva)">Catálogo</Link>
+                    <Link to="/favoritos">Favoritos</Link>
                 </div>
-                
+
                 <div className="nav-search">
                     {!buscadorAbierto ? (
                         <button
@@ -53,7 +54,7 @@ function Header() {
                             aria-expanded={buscadorAbierto}
                             onClick={() => setBuscadorAbierto(!buscadorAbierto)}
                         >
-                            <img src="/public/icons/search.svg" alt="" />
+                            <img src="/icons/search.svg" alt="" />
                         </button>
                     ) : (
                         <div className="nav-search-expanded">
@@ -65,15 +66,15 @@ function Header() {
                     )}
                 </div>
 
-                
 
-                <a 
-                    href="#carrito"
+
+                <Link
+                    to="/carrito"
                     className="nav-icon"
                     aria-label="Ver carrito"
                 >
-                    <img src="/public/icons/shopping-bag.svg" alt="" />
-                </a>
+                    <img src="/icons/shopping-bag.svg" alt="" />
+                </Link>
             </nav>
 
         </header>

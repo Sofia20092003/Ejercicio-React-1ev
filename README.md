@@ -12,7 +12,7 @@ La librería está especializada en cuatro géneros literarios:
 
 Su identidad visual combina la estética *Dark Academia* con elementos de fantasía: colores oscuros, detalles dorados, ilustraciones y una ambientación inspirada en mundos literarios.
 
-> **Estado del proyecto:** En desarrollo. Inicio y Catálogo tienen rutas independientes. Inicio muestra cuatro libros destacados; los enlaces al catálogo lo abren en una nueva pestaña, desde arriba. Catálogo ofrece búsqueda y filtros. Detalle y Carrito siguen pendientes.
+> **Estado del proyecto:** En desarrollo. Inicio y Catálogo tienen rutas independientes. Inicio muestra cuatro libros destacados y un botón centrado con esquinas redondeadas; los enlaces al catálogo lo abren en una nueva pestaña, desde arriba. Catálogo ofrece búsqueda y filtros. Favoritos y una versión básica del Carrito están disponibles; la página de detalle y el proceso de compra siguen pendientes.
 
 ---
 
@@ -258,7 +258,7 @@ El diseño utiliza una paleta oscura con tonos burdeos, ciruela, marfil y dorado
 
 ## 8. Funcionalidades pendientes
 
-El objetivo es disponer de cuatro páginas independientes:
+Las páginas y funcionalidades se encuentran en estas fases:
 
 ### Inicio — `/`
 
@@ -272,11 +272,15 @@ Implementados el listado, los filtros y la búsqueda. La paginación queda pendi
 
 Información individual del libro y opción de añadirlo al carrito.
 
+### Favoritos — `/favoritos`
+
+El corazón de cada tarjeta permite guardar o retirar libros. La selección se guarda en el navegador.
+
 ### Carrito — `/carrito`
 
-Gestión de productos seleccionados, cantidades, eliminación, vaciado con confirmación y cálculo del importe total.
+Se pueden añadir libros desde sus tarjetas, ver cantidades y total, y eliminar todas las unidades de un título. Ajustar cantidades, vaciar con confirmación y finalizar la compra siguen pendientes.
 
-**Estado:** las rutas `/` y `/catalogo` están configuradas. Detalle y Carrito todavía no están implementadas; el icono del carrito enlaza provisionalmente al pie.
+**Estado:** están configuradas las rutas `/`, `/catalogo`, `/favoritos` y `/carrito`. La página de detalle sigue pendiente. Los favoritos y el carrito se guardan en este navegador y se sincronizan entre sus pestañas.
 
 ---
 
@@ -284,9 +288,9 @@ Gestión de productos seleccionados, cantidades, eliminación, vaciado con confi
 
 En la revisión del código se han identificado algunos ajustes pendientes:
 
-- Corregir referencias a recursos que utilizan `/public/` en lugar de rutas desde la raíz.
+- Corregir la referencia al favicon, que utiliza `/public/` en lugar de una ruta desde la raíz.
 - Cambiar el idioma del documento HTML a español.
-- Implementar las rutas de detalle y carrito.
+- Implementar la ruta de detalle y completar las funciones del carrito.
 
 Estas incidencias están registradas para su corrección durante el desarrollo. Los datos conservan variantes de mayúsculas en categorías; el filtro las compara en minúsculas.
 

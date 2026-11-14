@@ -1,5 +1,3 @@
-import { Link } from 'react-router'
-
 function Hero(){
     return(
         <section className="hero" id="inicio">
@@ -16,9 +14,7 @@ function Hero(){
                 romances imposibles y secretos que esperan ser revelados.
             </p>
 
-            <Link className="primary-button" to="/catalogo" target="_blank" rel="noopener noreferrer" aria-label="Explorar libros (se abre en una pestaña nueva)">
-                Explorar libros
-            </Link>
+            <a className="primary-button" href="#destacados">Explorar libros</a>
         </section>
     )
 }

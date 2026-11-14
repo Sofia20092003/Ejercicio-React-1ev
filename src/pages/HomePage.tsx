@@ -11,7 +11,7 @@ function HomePage() {
     <>
       <Hero />
       <Intro />
-      <section className="featured-books">
+      <section className="featured-books" id="destacados">
         <h2>Libros destacados</h2>
         <div className="books-grid">
           {librosDestacados.map((book) => (
