@@ -16,7 +16,8 @@ function BookCard({ book }: BookCardProps) {
   }
 
   function anadirAlCarrito() {
-    setMensaje(addToCart(book.id) ? 'Añadido al carrito' : 'No se pudo guardar en este navegador')
+    const resultado = addToCart(book.id)
+    setMensaje(resultado === 'added' ? 'Añadido al carrito' : resultado === 'limit' ? 'No quedan más unidades disponibles' : 'No se pudo guardar en este navegador')
   }
 
   return (

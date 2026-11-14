@@ -1,4 +1,5 @@
 import { useSyncExternalStore } from 'react'
+import { books } from '../data/books'
 
 const changeEvent = 'hidden-chapter-change'
 const favoriteKey = 'hidden-chapter-favoritos'
@@ -41,13 +42,23 @@ export function useLibrary() {
     return write(favoriteKey, current.includes(id) ? current.filter(item => item !== id) : [...current, id])
   }
 
-  function addToCart(id: number) {
-    return write(cartKey, [...parse(read(cartKey)), id])
+  function addToCart(id: number): 'added' | 'limit' | 'error' {
+    const current = parse(read(cartKey))
+    const book = books.find(item => item.id === id)
+    if (!book || current.filter(item => item === id).length >= book.stock) return 'limit'
+    return write(cartKey, [...current, id]) ? 'added' : 'error'
+  }
+
+  function decreaseQuantity(id: number) {
+    const current = parse(read(cartKey))
+    if (current.filter(item => item === id).length <= 1) return false
+    current.splice(current.indexOf(id), 1)
+    return write(cartKey, current)
   }
 
   function removeFromCart(id: number) {
     return write(cartKey, parse(read(cartKey)).filter(item => item !== id))
   }
 
-  return { favorites, cart, toggleFavorite, addToCart, removeFromCart }
+  return { favorites, cart, toggleFavorite, addToCart, decreaseQuantity, removeFromCart }
 }

@@ -548,6 +548,15 @@ No se ejecutaron nuevamente los comandos `npm run lint` ni `npm run build` duran
 
 ---
 
+### Contador y cantidades del carrito — 14 de noviembre de 2026
+
+- La bolsa de la cabecera muestra el número total de unidades guardadas en el carrito.
+- En `/carrito`, los botones + y − permiten ajustar la cantidad, desde una unidad hasta el stock indicado en `books.json`; eliminar retira todas las unidades del título.
+- El botón de las tarjetas también respeta el máximo y muestra un mensaje al alcanzarlo. El stock es local y no se reduce ni se reserva entre usuarios.
+- Se actualizaron `README.md` y esta bitácora. Se comprobaron ESLint y compilación en una copia de trabajo, y se verificó la lógica de aumento, límite, reducción y eliminación con datos de prueba. Queda pendiente la prueba visual y funcional en el navegador.
+
+---
+
 ## 8. Mantenimiento de la documentación
 
 Después de cada nueva implementación se registrará:

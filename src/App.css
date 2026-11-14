@@ -770,3 +770,10 @@ html { scroll-behavior: smooth; }
   .nav-links { justify-content: center; flex-wrap: wrap; }
   .navigation.search-open .nav-links { transform: none; }
 }
+
+.cart-icon { position: relative; }
+.cart-badge { position: absolute; top: 0; right: 0; display: grid; place-items: center; min-width: 1.15rem; height: 1.15rem; padding: 0 0.2rem; border-radius: 999px; background: var(--color-gold); color: var(--color-ink); font-size: 0.7rem; font-weight: 700; line-height: 1; }
+.quantity-control { display: flex; align-items: center; gap: 0.8rem; margin: 0.75rem 0; }
+.cart-item .quantity-control button { display: grid; place-items: center; width: 2.2rem; height: 2.2rem; padding: 0; font-size: 1.1rem; }
+.cart-item button:disabled { opacity: 0.45; cursor: not-allowed; }
+.cart-item button:disabled:hover { background: transparent; color: var(--color-ivory); }

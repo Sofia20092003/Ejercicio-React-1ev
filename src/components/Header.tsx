@@ -1,8 +1,10 @@
 import { Link } from 'react-router'
 import { useEffect, useRef, useState } from "react"
 import SearchOverlay from "./SearchOverlay";
+import { useLibrary } from "../hooks/useLibrary"
 
 function Header() {
+    const { cart } = useLibrary()
     const [buscadorAbierto, setBuscadorAbierto] = useState(false);
     const inputRef = useRef<HTMLInputElement>(null)
 
@@ -73,10 +75,11 @@ function Header() {
 
                 <Link
                     to="/carrito"
-                    className="nav-icon"
-                    aria-label="Ver carrito"
+                    className="nav-icon cart-icon"
+                    aria-label={`Ver carrito: ${cart.length} ${cart.length === 1 ? 'producto' : 'productos'}`}
                 >
                     <img src="/icons/shopping-bag.svg" alt="" />
+                    {cart.length > 0 && <span className="cart-badge" aria-hidden="true">{cart.length}</span>}
                 </Link>
             </nav>
 

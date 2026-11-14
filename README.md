@@ -278,9 +278,9 @@ El corazón de cada tarjeta permite guardar o retirar libros. El corazón dorado
 
 ### Carrito — `/carrito`
 
-Se pueden añadir libros desde sus tarjetas, ver cantidades y total, y eliminar todas las unidades de un título. Ajustar cantidades, vaciar con confirmación y finalizar la compra siguen pendientes.
+Se pueden añadir libros desde sus tarjetas, cambiar cantidades con los botones + y −, ver el total y eliminar un título. La bolsa muestra el número total de unidades. La cantidad está limitada por el stock del archivo de datos; vaciar con confirmación y finalizar la compra siguen pendientes.
 
-**Estado:** están configuradas las rutas `/`, `/catalogo`, `/favoritos` y `/carrito`. La página de detalle sigue pendiente. Los favoritos y el carrito se guardan en este navegador y se sincronizan entre sus pestañas.
+**Estado:** están configuradas las rutas `/`, `/catalogo`, `/favoritos` y `/carrito`. La página de detalle sigue pendiente. Los favoritos y el carrito se guardan en este navegador y se sincronizan entre sus pestañas. El stock es un dato local de ejemplo, no un inventario compartido ni una reserva.
 
 ---
 
