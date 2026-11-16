@@ -821,3 +821,95 @@ html { scroll-behavior: smooth; }
 .detail-sections h2 { color: var(--color-gold); font: 400 1.7rem Georgia, serif; margin-top: 2rem; }
 .detail-sections a { color: var(--color-gold); text-decoration: underline; }
 .detail-add { margin-top: 1.25rem; }
+
+/* Cabecera visible al recorrer la página */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  min-height: 0;
+  padding-top: 0.65rem;
+  padding-bottom: 0.65rem;
+  background-color: transparent;
+}
+.brand {
+  width: auto;
+  padding: 0.3rem 0.8rem;
+  border: 1px solid rgb(190 157 103 / 24%);
+  border-radius: 0.8rem;
+  background: rgb(0 0 0 / 42%);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.brand-logo { width: clamp(13rem, 21vw, 19rem); transition: filter 0.25s ease; }
+.brand:hover, .brand:focus-visible {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 1.2rem rgb(190 157 103 / 25%);
+}
+.brand:hover .brand-logo { opacity: 1; filter: brightness(1.18); }
+#destacados { scroll-margin-top: 10rem; }
+
+/* Un recorrido ligero por los géneros y los favoritos */
+.worlds, .reading-corner { padding: 4rem 6%; text-align: center; }
+.worlds h2, .reading-corner h2 {
+  margin: 0;
+  color: var(--color-ivory);
+  font: 400 clamp(2rem, 4vw, 3rem)/1.2 Georgia, serif;
+}
+.worlds-intro, .reading-corner > p:not(.eyebrow) {
+  max-width: 39rem;
+  margin: 1.2rem auto 2rem;
+  color: rgb(234 224 210 / 75%);
+  line-height: 1.8;
+}
+.worlds-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; max-width: 72rem; margin: 0 auto; }
+.world-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 2rem 1.2rem;
+  border: 1px solid rgb(190 157 103 / 30%);
+  border-radius: 0.75rem;
+  background: rgb(28 18 25 / 78%);
+  transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+.world-card:hover, .world-card:focus-visible { transform: translateY(-0.3rem); border-color: var(--color-gold); background: rgb(50 31 41 / 95%); }
+.world-symbol { color: var(--color-gold); font-size: 2rem; line-height: 1; }
+.world-name { color: var(--color-ivory); font: 400 1.4rem Georgia, serif; }
+.world-description { color: rgb(234 224 210 / 75%); line-height: 1.6; flex: 1; }
+.world-action, .reading-corner a { color: var(--color-gold); font-size: 0.9rem; font-weight: 700; }
+.reading-corner { max-width: 72rem; margin: 1rem auto 5rem; border-top: 1px solid rgb(190 157 103 / 24%); border-bottom: 1px solid rgb(190 157 103 / 24%); }
+.reading-corner a:hover { text-decoration: underline; }
+
+/* Enlaces útiles y contexto del proyecto en el pie */
+.footer { display: block; padding: 3.5rem 6% 1.5rem; background-color: rgb(18 12 18 / 95%); text-align: left; }
+.footer-content { display: grid; grid-template-columns: 2fr 1fr 1.5fr; gap: 3rem; max-width: 72rem; margin: 0 auto; }
+.footer .footer-brand { color: var(--color-gold); font: 400 1.5rem Georgia, serif; }
+.footer-about p + p { margin-top: 0.8rem; }
+.footer h2 { margin: 0 0 1rem; color: var(--color-ivory); font: 400 1.15rem Georgia, serif; }
+.footer-nav { display: flex; flex-direction: column; align-items: flex-start; gap: 0.55rem; }
+.footer-nav h2 { margin-bottom: 0.45rem; }
+.footer-nav a { color: rgb(234 224 210 / 75%); font-size: 0.875rem; }
+.footer-nav a:hover, .footer-nav a:focus-visible { color: var(--color-gold); text-decoration: underline; }
+.footer .footer-bottom { max-width: 72rem; margin: 2.5rem auto 0; padding-top: 1.25rem; border-top: 1px solid rgb(234 224 210 / 12%); font-size: 0.75rem; }
+@media (max-width: 48rem) {
+  .header { gap: 0.3rem; padding: 0.5rem 4%; }
+  .brand-logo { width: min(12rem, 65vw); }
+  .worlds-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .footer-content { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .footer-about { grid-column: 1 / -1; }
+  #destacados { scroll-margin-top: 11rem; }
+}
+@media (max-width: 30rem) {
+  .header { gap: 0.15rem; }
+  .brand { width: auto; padding: 0.15rem 0.6rem; }
+  .brand-logo { width: min(10rem, 60vw); }
+  .navigation { gap: 0.5rem; }
+  .worlds, .reading-corner { padding: 3rem 1.25rem; }
+  .worlds-grid { gap: 0.75rem; }
+  .world-card { padding: 1.5rem 0.75rem; }
+  .world-name { font-size: 1.2rem; }
+  .world-description { font-size: 0.875rem; }
+  .reading-corner { margin: 1rem 1.25rem 3rem; }
+  .footer { padding: 3rem 1.25rem 1.5rem; }
+}

@@ -621,6 +621,24 @@ No se ejecutaron nuevamente los comandos `npm run lint` ni `npm run build` duran
 
 ---
 
+### Cabecera, inicio y pie de página — 16 de noviembre de 2026
+
+- La cabecera permanece visible con `position: sticky`; el logo tiene un fondo oscuro y un borde que se ilumina al pasar el ratón o recibir foco. Se redujo el tamaño de la cabecera en pantallas pequeñas y se añadió margen de desplazamiento a la sección de destacados.
+- Inicio incluye cuatro tarjetas de géneros y una invitación a guardar favoritos. Cada tarjeta abre el catálogo con su categoría en la dirección, mediante `useSearchParams`; los filtros actualizan esa dirección. Si el parámetro no es válido se muestran todos los libros.
+- El pie incluye enlaces funcionales a Inicio, Catálogo, Favoritos y Carrito y aclara que la tienda es un proyecto ficticio. Se compararon los apartados de ayuda e información de [Casa del Libro](https://www.casadellibro.com/) y el contenido sobre la tienda de [Agapea](https://www.agapea.com/); quedan pendientes los datos de contacto y las condiciones reales si el proyecto llega a necesitarlos.
+- Archivos modificados: `src/App.css`, `src/pages/HomePage.tsx`, `src/pages/CatalogoPage.tsx`, `src/components/Footer.tsx`, `README.md` y `DOCUMENTACION.md`.
+- En una copia temporal se ejecutaron correctamente `npm run lint` y `npm run build`. En el navegador a 390 píxeles se revisaron Inicio y el buscador abierto, se comprobó que Fantasía y Romance filtran el catálogo y que al añadir dos unidades la bolsa muestra 2 mientras la cabecera sigue visible al desplazarse. Queda pendiente comprobarlo en un móvil físico y revisar el resto de tamaños y estados.
+
+---
+
+### Cabecera transparente — 16 de noviembre de 2026
+
+- Se retiraron el color oscuro, el desenfoque, el borde y la sombra de la cabecera para que se vea la imagen del fondo. Se mantiene `position: sticky` y el fondo propio del logo.
+- Se actualizaron `src/App.css`, `README.md` y `DOCUMENTACION.md`.
+- Se comprobó el cambio en una copia temporal con ESLint y compilación. En el navegador a 390 píxeles se verificó que el fondo es transparente y la cabecera permanece arriba al hacer scroll. El contenido también puede verse a través de la cabecera al desplazarse. Queda pendiente comprobarlo en móviles físicos y otros tamaños.
+
+---
+
 ## 8. Mantenimiento de la documentación
 
 Después de cada nueva implementación se registrará:

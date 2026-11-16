@@ -12,7 +12,7 @@ La librería está especializada en cuatro géneros literarios:
 
 Su identidad visual combina la estética *Dark Academia* con elementos de fantasía: colores oscuros, detalles dorados, ilustraciones y una ambientación inspirada en mundos literarios.
 
-> **Estado del proyecto:** En desarrollo. Inicio y Catálogo tienen rutas independientes. Inicio muestra ocho libros destacados. El catálogo ofrece búsqueda, filtros y paginación; cada libro tiene una página de detalle. Favoritos y carrito están disponibles; el proceso de compra sigue pendiente.
+> **Estado del proyecto:** En desarrollo. Inicio y Catálogo tienen rutas independientes. Inicio muestra accesos a los cuatro géneros y ocho libros destacados. El catálogo ofrece búsqueda, filtros y paginación; cada libro tiene una página de detalle. Favoritos y carrito están disponibles; el proceso de compra sigue pendiente.
 
 ---
 
@@ -233,7 +233,7 @@ La estructura está definida mediante la interfaz `Book` en TypeScript.
 
 Se han incorporado filtros para mostrar los libros según su género literario.
 
-La lógica de `CatalogoPage.tsx` utiliza `useState` y `.filter()`. El valor inicial muestra todos los libros y la comparación ignora mayúsculas en las categorías.
+La lógica de `CatalogoPage.tsx` utiliza `useSearchParams` y `.filter()`. La categoría seleccionada se refleja en la dirección (por ejemplo, `/catalogo?categoria=fantasia`), lo que permite abrirla desde Inicio. Si no se indica una categoría válida, se muestran todos los libros. La comparación ignora mayúsculas en las categorías.
 
 ### 7.4. Búsqueda de libros
 
@@ -256,7 +256,7 @@ La cabecera incorpora un buscador expandible que permite:
 
 ### 7.6. Diseño responsive
 
-Se utilizan CSS Grid, Flexbox, media queries y unidades relativas como `rem` para adaptar la interfaz a distintos tamaños de pantalla. En móviles pequeños, el buscador de la cabecera se despliega debajo de la navegación y el fondo muestra la zona de la luna y el castillo.
+Se utilizan CSS Grid, Flexbox, media queries y unidades relativas como `rem` para adaptar la interfaz a distintos tamaños de pantalla. La cabecera permanece visible al desplazarse y es transparente para dejar ver el fondo de la página; su logo tiene un fondo que mejora el contraste. En móviles pequeños, el buscador de la cabecera se despliega debajo de la navegación y el fondo muestra la zona de la luna y el castillo.
 
 El diseño utiliza una paleta oscura con tonos burdeos, ciruela, marfil y dorado.
 
@@ -268,7 +268,7 @@ Las páginas y funcionalidades se encuentran en estas fases:
 
 ### Inicio — `/`
 
-Presentación de la librería y ocho libros destacados.
+Presentación de la librería, accesos a los cuatro géneros, ocho libros destacados y un enlace a favoritos. El pie de página contiene navegación y explica que se trata de un proyecto ficticio.
 
 ### Catálogo — `/catalogo`
 

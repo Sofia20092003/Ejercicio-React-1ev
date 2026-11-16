@@ -1,4 +1,5 @@
 import { useState, type FormEvent } from 'react'
+import { useSearchParams } from 'react-router'
 import BookCard from '../components/BookCard'
 import { books } from '../data/books'
 
@@ -12,7 +13,9 @@ const categorias = [
 ]
 
 function CatalogoPage() {
-  const [categoria, setCategoria] = useState('todos')
+  const [searchParams, setSearchParams] = useSearchParams()
+  const categoriaSolicitada = searchParams.get('categoria')
+  const categoria = categorias.some(item => item.valor === categoriaSolicitada) ? categoriaSolicitada : 'todos'
   const [texto, setTexto] = useState('')
   const [busqueda, setBusqueda] = useState('')
   const [pagina, setPagina] = useState(1)
@@ -23,7 +26,8 @@ function CatalogoPage() {
     return coincideCategoria && coincideBusqueda
   })
   const totalPaginas = Math.ceil(librosFiltrados.length / librosPorPagina)
-  const librosVisibles = librosFiltrados.slice((pagina - 1) * librosPorPagina, pagina * librosPorPagina)
+  const paginaVisible = Math.min(pagina, Math.max(totalPaginas, 1))
+  const librosVisibles = librosFiltrados.slice((paginaVisible - 1) * librosPorPagina, paginaVisible * librosPorPagina)
 
   function buscar(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -32,7 +36,12 @@ function CatalogoPage() {
   }
 
   function cambiarCategoria(valor: string) {
-    setCategoria(valor)
+    setSearchParams(actuales => {
+      const siguientes = new URLSearchParams(actuales)
+      if (valor === 'todos') siguientes.delete('categoria')
+      else siguientes.set('categoria', valor)
+      return siguientes
+    })
     setPagina(1)
   }
 
@@ -53,7 +62,7 @@ function CatalogoPage() {
         <p className="catalog-count" role="status">{librosFiltrados.length} {librosFiltrados.length === 1 ? 'libro encontrado' : 'libros encontrados'}</p>
         <div className="books-grid">{librosVisibles.map(book => <BookCard key={book.id} book={book} />)}</div>
         {totalPaginas > 1 && <nav className="pagination" aria-label="Páginas del catálogo">
-          {Array.from({ length: totalPaginas }, (_, index) => index + 1).map(numero => <button key={numero} type="button" aria-label={`Página ${numero}`} aria-current={pagina === numero ? 'page' : undefined} onClick={() => { setPagina(numero); window.scrollTo({ top: 0, behavior: 'smooth' }) }}>{numero}</button>)}
+          {Array.from({ length: totalPaginas }, (_, index) => index + 1).map(numero => <button key={numero} type="button" aria-label={`Página ${numero}`} aria-current={paginaVisible === numero ? 'page' : undefined} onClick={() => { setPagina(numero); window.scrollTo({ top: 0, behavior: 'smooth' }) }}>{numero}</button>)}
         </nav>}
       </> : <p className="no-results">No hemos encontrado libros que coincidan con tu búsqueda.</p>}
     </section>
