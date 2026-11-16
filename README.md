@@ -268,7 +268,7 @@ Las páginas y funcionalidades se encuentran en estas fases:
 
 ### Inicio — `/`
 
-Presentación de la librería, accesos a los cuatro géneros, ocho libros destacados y un enlace a favoritos. El pie de página contiene navegación y explica que se trata de un proyecto ficticio.
+Presentación de la librería con una descripción de bienvenida, accesos a los cuatro géneros, ocho libros destacados bajo «Historias elegidas para ti» y un enlace a favoritos. El pie de página contiene navegación y explica que se trata de un proyecto ficticio.
 
 ### Catálogo — `/catalogo`
 

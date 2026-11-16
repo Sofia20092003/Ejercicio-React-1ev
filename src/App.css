@@ -141,7 +141,7 @@
   line-height: 1.2;
 }
 
-.intro > p:last-child{
+.intro > p:not(.eyebrow){
   max-width: 38rem;
   margin: 1.5rem auto 0;
   color: rgb(234 224 210 / 72%);
@@ -632,6 +632,18 @@
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 400;
+  text-align: center;
+}
+
+.featured-books .featured-title {
+  margin-bottom: 1rem;
+}
+
+.featured-intro {
+  max-width: 38rem;
+  margin: 0 auto 2.5rem;
+  color: rgb(234 224 210 / 72%);
+  line-height: 1.8;
   text-align: center;
 }
 

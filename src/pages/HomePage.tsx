@@ -34,7 +34,8 @@ function HomePage() {
         </div>
       </section>
       <section className="featured-books" id="destacados">
-        <h2>Libros destacados</h2>
+        <h2 className="featured-title">Historias elegidas para ti</h2>
+        <p className="featured-intro">Algunos mundos merecen ser descubiertos. Estos son nuestros elegidos para empezar.</p>
         <div className="books-grid">
           {librosDestacados.map((book) => (
             <BookCard key={book.id} book={book} />

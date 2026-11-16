@@ -639,6 +639,14 @@ No se ejecutaron nuevamente los comandos `npm run lint` ni `npm run build` duran
 
 ---
 
+### Textos de bienvenida — 16 de noviembre de 2026
+
+- Se amplió el texto de presentación de Inicio y se renombró la sección de destacados a «Historias elegidas para ti», acompañada de una frase de bienvenida. El contenido y la selección de los libros permanecen iguales.
+- Se ajustaron los estilos de los párrafos en `src/App.css` y se actualizaron `src/components/Intro.tsx`, `src/pages/HomePage.tsx`, `README.md` y `DOCUMENTACION.md`.
+- Se ejecutaron ESLint y la compilación en una copia temporal. Queda pendiente la revisión visual en los dispositivos de la autora.
+
+---
+
 ## 8. Mantenimiento de la documentación
 
 Después de cada nueva implementación se registrará:

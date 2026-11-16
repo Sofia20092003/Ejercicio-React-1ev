@@ -8,8 +8,11 @@ function Intro(){
             <h2>Hay historias que nunca te abandonan.</h2>
 
             <p>
-                Fantasía, romantasy, romance y literatura juvenil.
-                Encuentra tu próximo capítulo favorito.
+                Hay libros que se leen y libros que se quedan contigo. Entre estas páginas encontrarás
+                reinos por descubrir, amores que desafían lo imposible y personajes que sentirás como amigos.
+            </p>
+            <p>
+                Tómate tu tiempo, explora cada rincón y deja que tu próxima historia te encuentre.
             </p>
         </section>
     )
