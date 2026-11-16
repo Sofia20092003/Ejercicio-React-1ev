@@ -44,6 +44,27 @@ body{
   background-attachment: fixed;
 }
 
+@media (max-width: 48rem) {
+  body {
+    isolation: isolate;
+    background-image: none;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+      linear-gradient(rgb(21 19 22 / 40%), rgb(21 19 22 / 60%)),
+      url('/images/hero-background.png');
+    background-position: center, 83% center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
 body,
 button,
 a {

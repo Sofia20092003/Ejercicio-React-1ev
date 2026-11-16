@@ -613,6 +613,14 @@ No se ejecutaron nuevamente los comandos `npm run lint` ni `npm run build` duran
 
 ---
 
+### Fondo en pantallas pequeñas — 16 de noviembre de 2026
+
+- Se adaptó el fondo para móviles y tabletas mediante una capa fija del tamaño de la pantalla, centrada en la luna y el castillo, sin usar `background-attachment: fixed` en esa capa.
+- En una copia local se revisó visualmente Inicio a 390 píxeles y el catálogo a 320 píxeles. La imagen de fondo sigue recortándose para llenar una pantalla vertical.
+- Se ejecutaron ESLint y compilación correctamente. Queda pendiente la comprobación en un iPhone físico y en otros tamaños.
+
+---
+
 ## 8. Mantenimiento de la documentación
 
 Después de cada nueva implementación se registrará:

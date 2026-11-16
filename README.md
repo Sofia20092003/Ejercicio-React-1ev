@@ -256,7 +256,7 @@ La cabecera incorpora un buscador expandible que permite:
 
 ### 7.6. Diseño responsive
 
-Se utilizan CSS Grid, Flexbox, media queries y unidades relativas como `rem` para adaptar la interfaz a distintos tamaños de pantalla. En móviles pequeños, el buscador de la cabecera se despliega debajo de la navegación.
+Se utilizan CSS Grid, Flexbox, media queries y unidades relativas como `rem` para adaptar la interfaz a distintos tamaños de pantalla. En móviles pequeños, el buscador de la cabecera se despliega debajo de la navegación y el fondo muestra la zona de la luna y el castillo.
 
 El diseño utiliza una paleta oscura con tonos burdeos, ciruela, marfil y dorado.
 
