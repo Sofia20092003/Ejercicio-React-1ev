@@ -276,7 +276,7 @@ Listado de ocho libros por página, filtros y búsqueda por título o descripci�
 
 ### Detalle — `/libro/:id`
 
-Imagen, título, autor, resumen, categoría, precio e idioma, junto con el stock y un selector para añadir varias unidades al carrito. La ficha incluye una sección sobre el autor; las biografías verificadas disponibles enlazan a sus fuentes y las demás quedan pendientes de ampliar. Se accede desde las tarjetas y los resultados de la búsqueda de la cabecera.
+Imagen, título, autor, resumen, categoría, precio e idioma, además de páginas, editorial, año e ISBN de una edición impresa en español de referencia y el stock y un selector para añadir varias unidades al carrito. El nombre de la editorial enlaza a la fuente de la edición de referencia, que puede diferir de la portada y el precio del catálogo. Para «El príncipe cruel» se utiliza la edición de Hidra en tapa blanda de 2018. La ficha incluye una sección sobre el autor; las biografías verificadas disponibles enlazan a sus fuentes y las demás quedan pendientes de ampliar. Se accede desde las tarjetas y los resultados de la búsqueda de la cabecera.
 
 ### Favoritos — `/favoritos`
 

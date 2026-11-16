@@ -572,6 +572,28 @@ No se ejecutaron nuevamente los comandos `npm run lint` ni `npm run build` duran
 
 ---
 
+### Datos editoriales — 16 de noviembre de 2026
+
+- Se añadieron editorial, año de edición, páginas e ISBN a las fichas mediante `src/data/edicionesLibros.ts`. Cada registro indica una edición impresa en español de referencia e incluye un enlace a su fuente; no se ha verificado que coincida con la portada o el precio del catálogo.
+- En la revisión inicial se encontraron referencias para los 24 libros. En ese momento las fuentes consultadas discrepaban en el número de páginas de «El príncipe cruel» para el ISBN elegido (432 según [Casa del Libro](https://www.casadellibro.com.co/libro-el-principe-cruel-saga-los-habitantes-del-aire-1/9788417390617/8526012), 460 según la [Biblioteca Municipal de Coria](https://biblioteca.coria.org/cgi-bin/koha/opac-detail.pl?biblionumber=25081) y 464 según [Editorial Skla](https://editorialskla.com/libro/el-principe-cruel/)); por ello ese dato quedó pendiente hasta elegir la edición concreta.
+- Se actualizaron ambos documentos. Se comprobaron los ISBN, la compilación y ESLint, y se revisó el renderizado de una ficha con datos y otra con páginas pendientes. Queda pendiente la comprobación interactiva en el navegador.
+
+---
+
+### Edición normal de «El príncipe cruel» — 16 de noviembre de 2026
+
+- Se seleccionó la edición normal en tapa blanda con solapas de Editorial Hidra, publicada en 2018, ISBN 9788417390617. La ficha muestra 432 páginas, de acuerdo con [Casa del Libro](https://www.casadellibro.com/libro-el-principe-cruel-saga-los-habitantes-del-aire-1/9788417390617/8526012) y [Fnac](https://www.fnac.es/a6322847/Holly-Black-El-principe-cruel).
+- Se actualizaron ambos documentos y se comprobó el dato guardado. Queda pendiente la revisión visual en el navegador.
+
+---
+
+### Enlace en el nombre de la editorial — 16 de noviembre de 2026
+
+- Se retiró el texto explicativo de la ficha y se enlazó el nombre de la editorial a la fuente de la edición de referencia. La fuente puede ser la editorial o una librería.
+- Se actualizaron ambos documentos. ESLint y la compilación se comprobaron en una copia de trabajo; queda pendiente la revisión visual en el navegador.
+
+---
+
 ## 8. Mantenimiento de la documentación
 
 Después de cada nueva implementación se registrará:

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link, useParams } from 'react-router'
 import { books } from '../data/books'
 import { autoresVerificados, contextoLibros } from '../data/detallesLibros'
+import { edicionesLibros } from '../data/edicionesLibros'
 import { useLibrary } from '../hooks/useLibrary'
 import QuantitySelector from '../components/QuantitySelector'
 
@@ -16,6 +17,7 @@ function DetalleLibroPage() {
   const enCarrito = cart.filter(item => item === book.id).length
   const disponible = Math.max(0, book.stock - enCarrito)
   const cantidadSeleccionada = Math.min(cantidad, disponible)
+  const edicion = edicionesLibros[book.id]
   const perfil = autoresVerificados[book.autor]
   const otrosLibros = books.filter(item => item.autor === book.autor && item.id !== book.id)
 
@@ -35,7 +37,14 @@ function DetalleLibroPage() {
         <h1>{book.titulo}</h1>
         <p>Por {book.autor}</p>
         <p className="detail-price">{book.precio.toFixed(2)} €</p>
-        <dl><div><dt>Idioma</dt><dd>{book.idioma}</dd></div><div><dt>Stock disponible</dt><dd>{book.stock} unidades</dd></div></dl>
+        <dl>
+          <div><dt>Idioma</dt><dd>{book.idioma}</dd></div>
+          <div><dt>Stock disponible</dt><dd>{book.stock} unidades</dd></div>
+          <div><dt>Páginas</dt><dd>{edicion?.paginas ?? 'Pendiente de confirmar'}</dd></div>
+          <div><dt>Editorial</dt><dd>{edicion ? <a className="detail-link" href={edicion.fuente} target="_blank" rel="noopener noreferrer">{edicion.editorial}</a> : 'Pendiente de confirmar'}</dd></div>
+          <div><dt>Año de esta edición</dt><dd>{edicion?.ano ?? 'Pendiente de confirmar'}</dd></div>
+          <div><dt>ISBN</dt><dd>{edicion?.isbn ?? 'Pendiente de confirmar'}</dd></div>
+        </dl>
         <QuantitySelector cantidad={cantidadSeleccionada} disponible={disponible} onChange={setCantidad} titulo={book.titulo} />
         <button className="primary-button detail-add" type="button" onClick={anadir} disabled={disponible === 0}>Añadir al carrito</button>
         {disponible === 0 && <p>Has alcanzado el máximo disponible.</p>}
