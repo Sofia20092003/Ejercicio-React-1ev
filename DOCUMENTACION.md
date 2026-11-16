@@ -594,6 +594,16 @@ No se ejecutaron nuevamente los comandos `npm run lint` ni `npm run build` duran
 
 ---
 
+### Comprobaciones del enunciado — 16 de noviembre de 2026
+
+- En una copia temporal se completaron `npm ci`, `npm run lint` y `npm run build`. Se comprobó que las 24 portadas referenciadas existen en el proyecto.
+- En el navegador se revisaron la paginación del catálogo, una búsqueda por descripción, la ficha de «El príncipe cruel», la incorporación de tres unidades al carrito y la actualización del total al reducirlas a dos.
+- Se observaron las confirmaciones de eliminación y vaciado y el resultado de aceptarlas. Queda pendiente verificar la opción de cancelar en ambos casos. También se comprobó añadir y quitar un favorito.
+- Se inspeccionó visualmente el catálogo a 320, 768 y 1440 píxeles y la ficha a 320 píxeles. A 320 píxeles, al abrir el buscador de cabecera la bolsa pasa a una segunda línea. Queda pendiente revisar todas las páginas y funciones en esos tamaños.
+- Los elementos de prueba se retiraron al finalizar. Continúa pendiente consultar con el profesor las funciones y tecnologías adicionales.
+
+---
+
 ## 8. Mantenimiento de la documentación
 
 Después de cada nueva implementación se registrará:
