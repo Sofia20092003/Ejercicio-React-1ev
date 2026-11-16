@@ -768,7 +768,15 @@ html { scroll-behavior: smooth; }
 @media (max-width: 30rem) {
   .navigation { flex-wrap: wrap; gap: 0.5rem; }
   .nav-links { justify-content: center; flex-wrap: wrap; }
-  .navigation.search-open .nav-links { transform: none; }
+  .navigation.search-open {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 0.5rem;
+  }
+  .navigation.search-open .nav-links { grid-column: 1; grid-row: 1; justify-content: start; transform: none; }
+  .navigation.search-open .nav-search { grid-column: 1 / -1; grid-row: 2; width: 100%; }
+  .navigation.search-open > a[href="/favoritos"] { grid-column: 2; grid-row: 1; }
+  .navigation.search-open > a[href="/carrito"] { grid-column: 3; grid-row: 1; }
 }
 
 .cart-icon { position: relative; }

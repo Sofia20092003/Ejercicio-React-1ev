@@ -604,6 +604,15 @@ No se ejecutaron nuevamente los comandos `npm run lint` ni `npm run build` duran
 
 ---
 
+### Cabecera móvil y confirmaciones — 16 de noviembre de 2026
+
+- Se ajustó la cabecera en móviles: al abrir el buscador, este ocupa una fila bajo la navegación y el corazón y la bolsa permanecen en la primera fila.
+- Se comprobó visualmente en una copia local a 320 píxeles y se verificó la posición y el ancho a 375 y 768 píxeles. Queda pendiente revisar todas las páginas y estados en otros dispositivos.
+- Con datos y confirmaciones simulados se verificó que cancelar la eliminación o el vaciado conserva el carrito y que aceptar ejecuta la acción correspondiente. No se probó la opción Cancelar en el diálogo real del navegador.
+- Se ejecutaron ESLint y la compilación correctamente. Se actualizaron ambos documentos.
+
+---
+
 ## 8. Mantenimiento de la documentación
 
 Después de cada nueva implementación se registrará:
